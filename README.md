@@ -4,11 +4,38 @@
 
 **A countdown, a card and an invitation, all drawn live in the browser.**
 
+<a href="https://birthday-gift-wish.vercel.app/"><img src="https://img.shields.io/badge/Live_Demo-Open_Birthday_Studio-ff5d73?style=for-the-badge&logo=vercel&logoColor=white" alt="Live demo" /></a>
+
+<a href="https://github.com/Antech-greyhat/Birthday-Gift/stargazers"><img src="https://img.shields.io/github/stars/Antech-greyhat/Birthday-Gift?style=flat-square&logo=github&label=Stars&color=ffb938" alt="GitHub stars" /></a>
+<a href="https://github.com/Antech-greyhat/Birthday-Gift/network/members"><img src="https://img.shields.io/github/forks/Antech-greyhat/Birthday-Gift?style=flat-square&logo=github&label=Forks&color=19c2a0" alt="GitHub forks" /></a>
+<a href="https://github.com/Antech-greyhat/Birthday-Gift/watchers"><img src="https://img.shields.io/github/watchers/Antech-greyhat/Birthday-Gift?style=flat-square&logo=github&label=Watchers&color=a77bff" alt="GitHub watchers" /></a>
+<a href="https://github.com/Antech-greyhat/Birthday-Gift/graphs/contributors"><img src="https://img.shields.io/github/contributors/Antech-greyhat/Birthday-Gift?style=flat-square&label=Contributors&color=4f7cff" alt="Contributors" /></a>
+<br />
+<a href="https://github.com/Antech-greyhat/Birthday-Gift/issues"><img src="https://img.shields.io/github/issues/Antech-greyhat/Birthday-Gift?style=flat-square&label=Issues&color=ff5d73" alt="Open issues" /></a>
+<a href="https://github.com/Antech-greyhat/Birthday-Gift/pulls"><img src="https://img.shields.io/github/issues-pr/Antech-greyhat/Birthday-Gift?style=flat-square&label=Pull%20requests&color=ff7a1a" alt="Open pull requests" /></a>
+<a href="https://github.com/Antech-greyhat/Birthday-Gift/commits/master"><img src="https://img.shields.io/github/last-commit/Antech-greyhat/Birthday-Gift?style=flat-square&label=Last%20commit&color=23152f" alt="Last commit" /></a>
+<img src="https://img.shields.io/github/repo-size/Antech-greyhat/Birthday-Gift?style=flat-square&label=Repo%20size&color=6f5f7d" alt="Repository size" />
+<img src="https://img.shields.io/github/languages/top/Antech-greyhat/Birthday-Gift?style=flat-square&color=f7df1e" alt="Top language" />
+
 `React 19` · `Tailwind CSS 4` · `Vite 8` · `Motion` · `Canvas 2D` · `MediaRecorder`
+
+**[Try it live](https://birthday-gift-wish.vercel.app/)** · **[Star the repo](https://github.com/Antech-greyhat/Birthday-Gift/stargazers)** · **[Fork it](https://github.com/Antech-greyhat/Birthday-Gift/fork)** · **[Report a bug](https://github.com/Antech-greyhat/Birthday-Gift/issues/new)** · **[Contribute](#contributing)**
 
 </div>
 
 > Most birthday sites stop at the text. Birthday Studio goes one step further: the finished countdown, wish or invitation becomes a poster or a short video with music, sized for a feed post or a story, ready to send from the same screen.
+
+---
+
+## Live Demo
+
+The app is live at **[birthday-gift-wish.vercel.app](https://birthday-gift-wish.vercel.app/)**. There's no sign-up and nothing to install, so you can open it on your phone and send a card in under a minute.
+
+| Jump straight to | Link |
+| --- | --- |
+| Birthday Countdown | [birthday-gift-wish.vercel.app/#/countdown](https://birthday-gift-wish.vercel.app/#/countdown) |
+| Birthday Wishes | [birthday-gift-wish.vercel.app/#/wishes](https://birthday-gift-wish.vercel.app/#/wishes) |
+| Invitation Maker | [birthday-gift-wish.vercel.app/#/invitation](https://birthday-gift-wish.vercel.app/#/invitation) |
 
 ---
 
@@ -26,7 +53,7 @@ The app opens on a single page with three cards. Each card leads to a tool, and 
 
 ## Act I · Birthday Countdown
 
-Pick a month and day. The clock starts immediately and ticks every second with rolling digits. Adding the birth year unlocks the rest of the page.
+Enter their name and pick a month and day. The clock starts immediately and ticks every second with rolling digits. Adding the birth year unlocks the rest of the page.
 
 | Shown without a year | Unlocked by the year |
 | --- | --- |
@@ -207,6 +234,101 @@ Shared invitations are checked on arrival: unknown fields are dropped, text is l
 | Older browsers | Yes | Shows a notice instead |
 
 Some browsers say they can record MP4 but save files without a picture. The recorder inspects each finished video and quietly records again as WebM when that happens.
+
+---
+
+## Show Some Love
+
+If Birthday Studio made someone's day, help it reach more people.
+
+| How | Why it helps |
+| --- | --- |
+| **[Star the repo](https://github.com/Antech-greyhat/Birthday-Gift/stargazers)** | Tells others the project is worth a look and keeps it going |
+| **[Fork it](https://github.com/Antech-greyhat/Birthday-Gift/fork)** | Your own copy to experiment with, restyle or build on |
+| **Share the [live demo](https://birthday-gift-wish.vercel.app/)** | The next birthday is always closer than you think |
+| **[Open an issue](https://github.com/Antech-greyhat/Birthday-Gift/issues/new)** | Bugs, ideas and feature requests are all welcome |
+
+<div align="center">
+
+<a href="https://github.com/Antech-greyhat/Birthday-Gift/stargazers"><img src="https://img.shields.io/badge/Star_on_GitHub-ffb938?style=for-the-badge&logo=github&logoColor=23152f" alt="Star on GitHub" /></a>
+<a href="https://github.com/Antech-greyhat/Birthday-Gift/fork"><img src="https://img.shields.io/badge/Fork_on_GitHub-19c2a0?style=for-the-badge&logo=github&logoColor=white" alt="Fork on GitHub" /></a>
+
+</div>
+
+---
+
+## Contributing
+
+Contributions of every size are welcome, from a typo fix to a whole new card design.
+
+### Ways to help
+
+| Area | Ideas |
+| --- | --- |
+| Card designs | A new theme in `src/lib/canvas/themes.js`, with its own background and moving parts |
+| Wishes | More hand-written messages, recipients or tones in `src/tools/wishes/messages.js` |
+| Languages | Translating the interface and wishes |
+| Accessibility | Screen reader, keyboard and contrast improvements |
+| Bugs | Anything that looks wrong on a phone, in a browser or in an exported video |
+
+### Steps
+
+1. **Fork** the repository and clone your fork:
+   ```bash
+   git clone https://github.com/<your-username>/Birthday-Gift.git
+   cd Birthday-Gift
+   npm install
+   ```
+2. **Create a branch** named after your change:
+   ```bash
+   git checkout -b feat/sparkly-new-theme
+   ```
+3. **Make your change** and try it with `npm run dev`.
+4. **Check the build** passes with `npm run build`.
+5. **Commit** with a clear message, for example `feat: add aurora card theme` or `fix: year validation for babies born this year`.
+6. **Push** to your fork and **open a pull request** against `master`. Describe what changed, and add a screenshot for anything visual.
+
+### Guidelines
+
+| Do | Please avoid |
+| --- | --- |
+| Match the surrounding code style and naming | Adding a dependency when a few lines would do |
+| Keep each pull request focused on one change | Mixing unrelated fixes in one pull request |
+| Test at phone width as well as desktop | Breaking the "reduce motion" behaviour |
+| Keep everything client-side and private | Adding tracking, analytics or a server |
+
+Not sure where to start? Look through the [open issues](https://github.com/Antech-greyhat/Birthday-Gift/issues) or open a new one to talk an idea through first.
+
+---
+
+## Contributors
+
+Thanks to everyone who has helped build Birthday Studio.
+
+<a href="https://github.com/Antech-greyhat/Birthday-Gift/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Antech-greyhat/Birthday-Gift" alt="Contributors" />
+</a>
+
+---
+
+## Repository Stats
+
+<div align="center">
+
+<a href="https://github.com/Antech-greyhat/Birthday-Gift">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Antech-greyhat&repo=Birthday-Gift&show_owner=true&bg_color=fff7ee&title_color=ff5d73&text_color=23152f&icon_color=a77bff&border_color=eadfd3" alt="Birthday Gift repository card" />
+</a>
+
+<br /><br />
+
+<a href="https://star-history.com/#Antech-greyhat/Birthday-Gift&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Antech-greyhat/Birthday-Gift&type=Date&theme=dark" />
+    <img src="https://api.star-history.com/svg?repos=Antech-greyhat/Birthday-Gift&type=Date" alt="Star history chart" width="600" />
+  </picture>
+</a>
+
+</div>
 
 ---
 

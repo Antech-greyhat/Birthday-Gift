@@ -103,21 +103,21 @@ export const THEMES = [
   {
     id: 'sunset',
     name: 'Sunset Glow',
-    swatch: 'linear-gradient(180deg,#ffb36b,#ff5e8a,#7b4dff)',
+    swatch: 'linear-gradient(180deg,#ff9a5a,#f2507a,#6b3fd6)',
     dot: '#ff5e8a',
     ink: '#ffffff',
     sub: 'rgba(255,255,255,0.88)',
     accent: '#ffe58a',
     palette: ['#ffe58a', '#ffffff', '#ffc2d6'],
-    panel: null,
+    panel: 'rgba(62,18,74,0.38)',
     heading: 'classic',
     text: serifText,
-    shadow: 'rgba(90,20,70,0.35)',
-    tile: 'rgba(255,255,255,0.18)',
+    shadow: 'rgba(60,10,50,0.5)',
+    tile: 'rgba(255,255,255,0.16)',
     tileInk: '#ffffff',
     dark: true,
     paint(ctx, w, h, t, c) {
-      linearBg(ctx, w, h, ['#ffb36b', '#ff5e8a', '#7b4dff'], true)
+      linearBg(ctx, w, h, ['#ff9a5a', '#f2507a', '#6b3fd6'], true)
       sunrise(ctx, w, h, t)
       sparkles(ctx, w, h, t, { color: '#ffffff', count: 28 })
       confetti(ctx, w, h, t, { colors: c.palette, count: 22, speed: 0.6, size: 0.8 })

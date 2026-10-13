@@ -58,7 +58,7 @@ function InfoCard({ visual, eyebrow, title, children, index = 0 }) {
   )
 }
 
-function EmptyState({ onPick }) {
+function EmptyState({ onPick, needsName }) {
   const today = new Date()
   const examples = [
     { label: 'Today', icon: LuPartyPopper, m: today.getMonth(), d: today.getDate() },
@@ -71,16 +71,24 @@ function EmptyState({ onPick }) {
       <span className="grid size-20 place-items-center rounded-3xl bg-coral/10 text-4xl text-coral">
         <LuHourglass className="animate-bob" />
       </span>
-      <h2 className="font-display text-2xl font-semibold">Pick a birthday to start the clock</h2>
-      <p className="max-w-sm text-muted">Choose a month and day. Add the year to see the age, life stats and more.</p>
-      <div className="flex flex-wrap justify-center gap-2">
-        {examples.map((e) => (
-          <button key={e.label} className="chip" onClick={() => onPick(e.m, e.d)}>
-            {e.icon && <e.icon />}
-            {e.label}
-          </button>
-        ))}
-      </div>
+      <h2 className="font-display text-2xl font-semibold">{needsName ? 'Whose birthday is it?' : 'Pick a birthday to start the clock'}</h2>
+      <p className="max-w-sm text-muted">
+        {needsName ? 'Add their name to start the countdown.' : 'Enter their name and choose a month and day. Add the year to see the age, life stats and more.'}
+      </p>
+      {needsName ? (
+        <label htmlFor="cd-name" className="btn-accent cursor-pointer">
+          Add a name
+        </label>
+      ) : (
+        <div className="flex flex-wrap justify-center gap-2">
+          {examples.map((e) => (
+            <button key={e.label} className="chip" onClick={() => onPick(e.m, e.d)}>
+              {e.icon && <e.icon />}
+              {e.label}
+            </button>
+          ))}
+        </div>
+      )}
     </motion.div>
   )
 }
@@ -97,12 +105,17 @@ export default function CountdownTool() {
   const month = form.month === '' ? null : Number(form.month)
   const day = form.day ? Number(form.day) : null
   const maxDay = month == null ? 31 : daysInMonth(month)
-  const valid = month != null && day != null && day <= maxDay
-  const yearNum = /^\d{4}$/.test(form.year) ? Number(form.year) : null
-  const birthDate = valid && yearNum ? new Date(yearNum, month, day) : null
-  const birthYear = birthDate && yearNum >= 1900 && birthDate <= now ? yearNum : null
-  const yearError = form.year.length === 4 && !birthYear
   const name = form.name.trim()
+  const dateValid = month != null && day != null && day <= maxDay
+  const valid = dateValid && !!name
+  const thisYear = now.getFullYear()
+  const yearNum = /^\d{4}$/.test(form.year) ? Number(form.year) : null
+  const yearInRange = yearNum != null && yearNum >= 1900 && yearNum <= thisYear
+  const birthDate = dateValid && yearInRange ? new Date(yearNum, month, day) : null
+  const birthYear = birthDate && birthDate <= now ? yearNum : null
+  // Only complain once the year is complete, and say exactly what is wrong with it
+  const yearError =
+    form.year.length !== 4 ? '' : !yearInRange ? `Enter a year between 1900 and ${thisYear}` : birthDate && !birthYear ? `${MONTHS[month]} ${day}, ${yearNum} hasn't happened yet` : ''
 
   // Keep the address bar in sync so the url is always shareable
   useEffect(() => {
@@ -148,7 +161,7 @@ export default function CountdownTool() {
     [form.name, month, day, birthYear, theme],
   )
 
-  const possessive = name ? `${name}'s` : 'my'
+  const possessive = `${name}'s`
   const shareUrl = valid ? buildUrl('/countdown', { n: form.name, m: month + 1, d: day, y: birthYear || '', t: theme !== 'golden' ? theme : '' }) : ''
   const shareText = isToday
     ? `🎂 It's ${possessive} birthday today! Come celebrate:`
@@ -160,7 +173,7 @@ export default function CountdownTool() {
 
   function addToCalendar() {
     const start = isToday ? new Date(now.getFullYear(), now.getMonth(), now.getDate()) : cd.next
-    downloadEvent({ title: `${name ? `${name}'s` : 'My'} Birthday 🎂`, start, allDay: true, yearly: true, description: shareUrl })
+    downloadEvent({ title: `${possessive} Birthday 🎂`, start, allDay: true, yearly: true, description: shareUrl })
     notify('Calendar event downloaded')
   }
 
@@ -183,9 +196,25 @@ export default function CountdownTool() {
           <div className="mt-4 space-y-4">
             <div>
               <label htmlFor="cd-name" className="field-label">
-                Name <span className="font-normal text-muted">(optional)</span>
+                Name <span className="text-coral">*</span>
               </label>
-              <input id="cd-name" className="field" placeholder="e.g. Ava" maxLength={40} value={form.name} onChange={update('name')} autoComplete="off" />
+              <input
+                id="cd-name"
+                className="field"
+                placeholder="e.g. Ava"
+                maxLength={40}
+                value={form.name}
+                onChange={update('name')}
+                autoComplete="off"
+                required
+                aria-required="true"
+                aria-describedby={name ? undefined : 'cd-name-hint'}
+              />
+              {!name && (
+                <p id="cd-name-hint" className="mt-1.5 text-xs text-muted">
+                  Whose birthday are we counting down to?
+                </p>
+              )}
             </div>
             <div className="grid grid-cols-[1.5fr_1fr] gap-3">
               <div>
@@ -230,7 +259,7 @@ export default function CountdownTool() {
                 aria-describedby="cd-year-hint"
               />
               <p id="cd-year-hint" className={`mt-1.5 text-xs ${yearError ? 'text-coral' : 'text-muted'}`}>
-                {yearError ? 'Enter a year between 1900 and today' : 'Unlocks age, birth weekday and life stats'}
+                {yearError || 'Unlocks age, birth weekday and life stats'}
               </p>
             </div>
           </div>
@@ -257,7 +286,15 @@ export default function CountdownTool() {
         </motion.aside>
 
         <section className="min-w-0 space-y-6" aria-live="polite">
-          {!valid && <EmptyState onPick={(m, d) => setForm((f) => ({ ...f, month: String(m), day: String(d) }))} />}
+          {!valid && (
+            <EmptyState
+              needsName={dateValid && !name}
+              onPick={(m, d) => {
+                setForm((f) => ({ ...f, month: String(m), day: String(d) }))
+                if (!name) document.getElementById('cd-name')?.focus()
+              }}
+            />
+          )}
 
           {valid && (
             <>
@@ -279,7 +316,7 @@ export default function CountdownTool() {
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sun">Today's the day</p>
                         <h2 className="mt-1 font-display text-3xl font-semibold sm:text-5xl">
-                          Happy birthday{name ? `, ${name}` : ''}! <LuCake className="inline-block align-[-0.1em] text-sun" aria-hidden="true" /> {cd.ageToday || ''}
+                          Happy birthday, {name}! <LuCake className="inline-block align-[-0.1em] text-sun" aria-hidden="true" /> {cd.ageToday || ''}
                         </h2>
                       </div>
                       <button className="btn bg-sun text-ink hover:brightness-105" onClick={() => setBurst((b) => b + 1)}>
@@ -289,7 +326,7 @@ export default function CountdownTool() {
                   ) : (
                     <div className="mb-6">
                       <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sun">Counting down to</p>
-                      <h2 className="mt-1 font-display text-3xl font-semibold sm:text-5xl">{name ? `${name}'s birthday` : 'The big day'}</h2>
+                      <h2 className="mt-1 font-display text-3xl font-semibold sm:text-5xl">{possessive} birthday</h2>
                     </div>
                   )}
 
@@ -402,7 +439,7 @@ export default function CountdownTool() {
         <ShareModal
           open={shareOpen}
           onClose={() => setShareOpen(false)}
-          title={name ? `${name}'s countdown` : 'Birthday countdown'}
+          title={`${possessive} countdown`}
           draw={draw}
           shareText={shareText}
           shareUrl={shareUrl}
