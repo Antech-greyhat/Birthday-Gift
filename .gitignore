@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+dist-ssr/
+build/
+*.local
+
+# Vite and tooling caches
+.vite/
+.cache/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# Test and coverage reports
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.sw?
+*.sublime-workspace
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Local assistant settings
+.claude/
