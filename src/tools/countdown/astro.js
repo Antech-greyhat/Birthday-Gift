@@ -80,6 +80,7 @@ const RHYME = [
 export const rhymeFor = (weekday) => RHYME[weekday]
 
 export function generationOf(year) {
+  if (year >= 2025) return 'Gen Beta'
   if (year >= 2013) return 'Gen Alpha'
   if (year >= 1997) return 'Gen Z'
   if (year >= 1981) return 'Millennial'
