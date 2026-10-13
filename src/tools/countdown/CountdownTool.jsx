@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
-import { LuShare2, LuLink, LuCalendarPlus, LuHourglass, LuPartyPopper, LuSparkles, LuLock } from 'react-icons/lu'
+import { LuShare2, LuLink, LuCalendarPlus, LuHourglass, LuPartyPopper, LuSparkles, LuLock, LuCake, LuScroll, LuDna, LuFlower, LuFlower2, LuLeaf } from 'react-icons/lu'
+import { GiFlowerEmblem, GiVanillaFlower, GiDaisy, GiFlowers, GiRose, GiLotus, GiPoppy, GiSunflower } from 'react-icons/gi'
+import { PiFlower } from 'react-icons/pi'
 import ToolLayout from '../../components/ToolLayout'
 import ShareModal from '../../components/ShareModal'
 import ThemePicker from '../../components/ThemePicker'
@@ -18,7 +20,8 @@ import { buildUrl } from '../../lib/url'
 import { downloadEvent } from '../../lib/calendar'
 
 const tool = getTool('countdown')
-const FLOWER_EMOJI = ['🌺', '💜', '🌼', '🌼', '🤍', '🌹', '🪻', '🌺', '🌸', '🧡', '🏵️', '🌿']
+const FLOWER_ICON = [GiFlowerEmblem, PiFlower, GiVanillaFlower, GiDaisy, GiFlowers, GiRose, GiLotus, GiPoppy, LuFlower, GiSunflower, LuFlower2, LuLeaf]
+const FACT_COLOR = ['text-coral', 'text-sun', 'text-mint', 'text-sky', 'text-lilac']
 const ELEMENT_BG = {
   Fire: 'from-coral to-sun',
   Earth: 'from-mint to-[#7fa36b]',
@@ -58,7 +61,7 @@ function InfoCard({ visual, eyebrow, title, children, index = 0 }) {
 function EmptyState({ onPick }) {
   const today = new Date()
   const examples = [
-    { label: 'Today 🎉', m: today.getMonth(), d: today.getDate() },
+    { label: 'Today', icon: LuPartyPopper, m: today.getMonth(), d: today.getDate() },
     { label: 'New Year baby', m: 0, d: 1 },
     { label: 'Leap day', m: 1, d: 29 },
     { label: 'Christmas', m: 11, d: 25 },
@@ -73,6 +76,7 @@ function EmptyState({ onPick }) {
       <div className="flex flex-wrap justify-center gap-2">
         {examples.map((e) => (
           <button key={e.label} className="chip" onClick={() => onPick(e.m, e.d)}>
+            {e.icon && <e.icon />}
             {e.label}
           </button>
         ))}
@@ -132,7 +136,7 @@ export default function CountdownTool() {
     return {
       sign: zodiacOf(month, day),
       stone: BIRTHSTONES[month],
-      flower: BIRTH_FLOWERS[month],
+      flower: { ...BIRTH_FLOWERS[month], icon: FLOWER_ICON[month] },
       chinese: birthYear ? chineseZodiacOf(birthYear, month, day) : null,
       weekday: birthYear ? new Date(birthYear, month, day).getDay() : null,
       generation: birthYear ? generationOf(birthYear) : null,
@@ -275,7 +279,7 @@ export default function CountdownTool() {
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sun">Today's the day</p>
                         <h2 className="mt-1 font-display text-3xl font-semibold sm:text-5xl">
-                          Happy birthday{name ? `, ${name}` : ''}! {cd.ageToday ? `🎂 ${cd.ageToday}` : '🎂'}
+                          Happy birthday{name ? `, ${name}` : ''}! <LuCake className="inline-block align-[-0.1em] text-sun" aria-hidden="true" /> {cd.ageToday || ''}
                         </h2>
                       </div>
                       <button className="btn bg-sun text-ink hover:brightness-105" onClick={() => setBurst((b) => b + 1)}>
@@ -302,8 +306,8 @@ export default function CountdownTool() {
                   <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
                     <span className="rounded-full bg-white/10 px-3 py-1.5">{formatLongDate(cd.next)}</span>
                     {cd.turning && <span className="rounded-full bg-sun px-3 py-1.5 font-semibold text-ink">Turning {cd.turning}</span>}
-                    <span className="rounded-full bg-white/10 px-3 py-1.5">
-                      {details.sign.symbol}&#xFE0E; {details.sign.name}
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5">
+                      <details.sign.icon aria-hidden="true" /> {details.sign.name}
                     </span>
                     {!isToday && <span className="rounded-full bg-white/10 px-3 py-1.5">{cd.sleeps === 1 ? '1 sleep to go' : `${cd.sleeps} sleeps to go`}</span>}
                   </div>
@@ -325,7 +329,7 @@ export default function CountdownTool() {
                   index={0}
                   eyebrow={`${details.sign.element} sign · ${details.sign.range}`}
                   title={details.sign.name}
-                  visual={<span className={`grid size-14 place-items-center rounded-2xl bg-linear-to-br text-3xl text-white shadow-soft ${ELEMENT_BG[details.sign.element]}`}>{details.sign.symbol}&#xFE0E;</span>}
+                  visual={<span className={`grid size-14 place-items-center rounded-2xl bg-linear-to-br text-3xl text-white shadow-soft ${ELEMENT_BG[details.sign.element]}`}><details.sign.icon /></span>}
                 >
                   Ruled by {details.sign.planet}. Known for being {details.sign.traits.join(', ').toLowerCase()}.
                 </InfoCard>
@@ -342,11 +346,11 @@ export default function CountdownTool() {
                 >
                   Symbolises {details.stone.meaning.toLowerCase()}.
                 </InfoCard>
-                <InfoCard index={2} eyebrow={`${MONTHS[month]} birth flower`} title={details.flower.name} visual={<span className="grid size-14 place-items-center rounded-2xl bg-coral/10 text-3xl">{FLOWER_EMOJI[month]}</span>}>
+                <InfoCard index={2} eyebrow={`${MONTHS[month]} birth flower`} title={details.flower.name} visual={<span className="grid size-14 place-items-center rounded-2xl bg-coral/10 text-3xl text-coral"><details.flower.icon /></span>}>
                   Also {details.flower.also.toLowerCase()}. Stands for {details.flower.meaning.toLowerCase()}.
                 </InfoCard>
                 {details.chinese ? (
-                  <InfoCard index={3} eyebrow="Chinese zodiac" title={`Year of the ${details.chinese.name}`} visual={<span className="grid size-14 place-items-center rounded-2xl bg-sun/15 text-3xl">{details.chinese.emoji}</span>}>
+                  <InfoCard index={3} eyebrow="Chinese zodiac" title={`Year of the ${details.chinese.name}`} visual={<span className="grid size-14 place-items-center rounded-2xl bg-sun/15 text-3xl text-plum"><details.chinese.icon /></span>}>
                     {details.chinese.approximate ? 'Born near Lunar New Year, so it could be the previous sign.' : `Born in ${birthYear}.`}
                   </InfoCard>
                 ) : (
@@ -355,12 +359,12 @@ export default function CountdownTool() {
                   </InfoCard>
                 )}
                 {details.weekday != null && (
-                  <InfoCard index={4} eyebrow="Born on a" title={new Date(birthYear, month, day).toLocaleDateString('en', { weekday: 'long' })} visual={<span className="grid size-14 place-items-center rounded-2xl bg-sky/10 text-3xl">📜</span>}>
+                  <InfoCard index={4} eyebrow="Born on a" title={new Date(birthYear, month, day).toLocaleDateString('en', { weekday: 'long' })} visual={<span className="grid size-14 place-items-center rounded-2xl bg-sky/10 text-3xl text-sky"><LuScroll /></span>}>
                     “{rhymeFor(details.weekday)}.”
                   </InfoCard>
                 )}
                 {details.generation && (
-                  <InfoCard index={5} eyebrow="Generation" title={details.generation} visual={<span className="grid size-14 place-items-center rounded-2xl bg-lilac/10 text-3xl">🧬</span>}>
+                  <InfoCard index={5} eyebrow="Generation" title={details.generation} visual={<span className="grid size-14 place-items-center rounded-2xl bg-lilac/10 text-3xl text-lilac"><LuDna /></span>}>
                     {cd.turning ? `Celebrating birthday number ${cd.turning} next.` : 'Part of a generation that shaped the world.'}
                   </InfoCard>
                 )}
@@ -381,7 +385,7 @@ export default function CountdownTool() {
                       transition={{ delay: i * 0.04 }}
                       className="rounded-2xl bg-cream p-4"
                     >
-                      <span className="text-2xl">{f.emoji}</span>
+                      <f.icon className={`text-2xl ${FACT_COLOR[i % FACT_COLOR.length]}`} aria-hidden="true" />
                       <p className="mt-2 font-display text-xl font-semibold tabular-nums sm:text-2xl">{f.value}</p>
                       <p className="text-xs text-muted">{f.label}</p>
                     </motion.div>
