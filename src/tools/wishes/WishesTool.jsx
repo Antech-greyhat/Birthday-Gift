@@ -18,9 +18,17 @@ import { getTheme } from '../../lib/canvas/themes'
 
 const tool = getTool('wishes')
 const PAGE = 8
-const TONE_LABEL = Object.fromEntries(TONES.map((t) => [t.id, `${t.emoji} ${t.label}`]))
+const TONE_BY_ID = Object.fromEntries(TONES.map((t) => [t.id, t]))
 
 const pick = (list) => list[Math.floor(Math.random() * list.length)]
+
+function ToneBadge({ tone: { icon: Icon, label } }) {
+  return (
+    <span className="inline-flex items-center gap-1 rounded-full bg-paper px-2.5 py-1 text-xs font-medium text-muted">
+      <Icon aria-hidden="true" /> {label}
+    </span>
+  )
+}
 
 function Step({ n, title, children, className = '' }) {
   return (
@@ -131,7 +139,7 @@ function Editor() {
           <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:-mx-6 sm:px-6 lg:mx-0 lg:flex-wrap lg:px-0">
             {RECIPIENTS.map((r) => (
               <button key={r.id} onClick={() => setRecipient(r.id)} className={`chip ${recipient === r.id ? 'chip-active' : ''}`} aria-pressed={recipient === r.id}>
-                <span>{r.emoji}</span>
+                <r.icon aria-hidden="true" />
                 {r.label}
               </button>
             ))}
@@ -140,7 +148,7 @@ function Editor() {
           <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 sm:-mx-6 sm:px-6 lg:mx-0 lg:flex-wrap lg:px-0">
             {TONES.map((t) => (
               <button key={t.id} onClick={() => setTone(t.id)} className={`chip ${tone === t.id ? 'chip-active' : ''}`} aria-pressed={tone === t.id}>
-                <span>{t.emoji}</span>
+                <t.icon aria-hidden="true" />
                 {t.label}
               </button>
             ))}
@@ -229,7 +237,7 @@ function Editor() {
                   >
                     <p className="flex-1 text-[15px] leading-relaxed">{text}</p>
                     <div className="mt-3 flex items-center justify-between gap-2">
-                      <span className="rounded-full bg-paper px-2.5 py-1 text-xs font-medium text-muted">{TONE_LABEL[m.tone]}</span>
+                      <ToneBadge tone={TONE_BY_ID[m.tone]} />
                       <div className="flex gap-1.5">
                         <button onClick={() => copy(text)} className="grid size-9 place-items-center rounded-full border border-line bg-paper hover:border-ink/30" aria-label="Copy wish">
                           <LuCopy />

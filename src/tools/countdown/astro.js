@@ -1,17 +1,20 @@
+import { TbZodiacCapricorn, TbZodiacAquarius, TbZodiacPisces, TbZodiacAries, TbZodiacTaurus, TbZodiacGemini, TbZodiacCancer, TbZodiacLeo, TbZodiacVirgo, TbZodiacLibra, TbZodiacScorpio, TbZodiacSagittarius } from 'react-icons/tb'
+import { GiRat, GiCow, GiTiger, GiRabbit, GiDragonHead, GiSnake, GiHorseHead, GiGoat, GiMonkey, GiRooster, GiSittingDog, GiPig } from 'react-icons/gi'
+
 // Zodiac signs with the last day of each sign as [month, day], months are 1 based
 const ZODIAC = [
-  { name: 'Capricorn', symbol: '♑', end: [1, 19], range: 'Dec 22 – Jan 19', element: 'Earth', planet: 'Saturn', traits: ['Ambitious', 'Disciplined', 'Wise'] },
-  { name: 'Aquarius', symbol: '♒', end: [2, 18], range: 'Jan 20 – Feb 18', element: 'Air', planet: 'Uranus', traits: ['Original', 'Independent', 'Humanitarian'] },
-  { name: 'Pisces', symbol: '♓', end: [3, 20], range: 'Feb 19 – Mar 20', element: 'Water', planet: 'Neptune', traits: ['Compassionate', 'Artistic', 'Intuitive'] },
-  { name: 'Aries', symbol: '♈', end: [4, 19], range: 'Mar 21 – Apr 19', element: 'Fire', planet: 'Mars', traits: ['Bold', 'Energetic', 'Courageous'] },
-  { name: 'Taurus', symbol: '♉', end: [5, 20], range: 'Apr 20 – May 20', element: 'Earth', planet: 'Venus', traits: ['Reliable', 'Patient', 'Devoted'] },
-  { name: 'Gemini', symbol: '♊', end: [6, 20], range: 'May 21 – Jun 20', element: 'Air', planet: 'Mercury', traits: ['Curious', 'Witty', 'Adaptable'] },
-  { name: 'Cancer', symbol: '♋', end: [7, 22], range: 'Jun 21 – Jul 22', element: 'Water', planet: 'Moon', traits: ['Caring', 'Loyal', 'Protective'] },
-  { name: 'Leo', symbol: '♌', end: [8, 22], range: 'Jul 23 – Aug 22', element: 'Fire', planet: 'Sun', traits: ['Confident', 'Generous', 'Warm'] },
-  { name: 'Virgo', symbol: '♍', end: [9, 22], range: 'Aug 23 – Sep 22', element: 'Earth', planet: 'Mercury', traits: ['Thoughtful', 'Precise', 'Kind'] },
-  { name: 'Libra', symbol: '♎', end: [10, 22], range: 'Sep 23 – Oct 22', element: 'Air', planet: 'Venus', traits: ['Charming', 'Fair', 'Social'] },
-  { name: 'Scorpio', symbol: '♏', end: [11, 21], range: 'Oct 23 – Nov 21', element: 'Water', planet: 'Pluto', traits: ['Passionate', 'Brave', 'Magnetic'] },
-  { name: 'Sagittarius', symbol: '♐', end: [12, 21], range: 'Nov 22 – Dec 21', element: 'Fire', planet: 'Jupiter', traits: ['Adventurous', 'Optimistic', 'Free'] },
+  { name: 'Capricorn', symbol: '♑', icon: TbZodiacCapricorn, end: [1, 19], range: 'Dec 22 – Jan 19', element: 'Earth', planet: 'Saturn', traits: ['Ambitious', 'Disciplined', 'Wise'] },
+  { name: 'Aquarius', symbol: '♒', icon: TbZodiacAquarius, end: [2, 18], range: 'Jan 20 – Feb 18', element: 'Air', planet: 'Uranus', traits: ['Original', 'Independent', 'Humanitarian'] },
+  { name: 'Pisces', symbol: '♓', icon: TbZodiacPisces, end: [3, 20], range: 'Feb 19 – Mar 20', element: 'Water', planet: 'Neptune', traits: ['Compassionate', 'Artistic', 'Intuitive'] },
+  { name: 'Aries', symbol: '♈', icon: TbZodiacAries, end: [4, 19], range: 'Mar 21 – Apr 19', element: 'Fire', planet: 'Mars', traits: ['Bold', 'Energetic', 'Courageous'] },
+  { name: 'Taurus', symbol: '♉', icon: TbZodiacTaurus, end: [5, 20], range: 'Apr 20 – May 20', element: 'Earth', planet: 'Venus', traits: ['Reliable', 'Patient', 'Devoted'] },
+  { name: 'Gemini', symbol: '♊', icon: TbZodiacGemini, end: [6, 20], range: 'May 21 – Jun 20', element: 'Air', planet: 'Mercury', traits: ['Curious', 'Witty', 'Adaptable'] },
+  { name: 'Cancer', symbol: '♋', icon: TbZodiacCancer, end: [7, 22], range: 'Jun 21 – Jul 22', element: 'Water', planet: 'Moon', traits: ['Caring', 'Loyal', 'Protective'] },
+  { name: 'Leo', symbol: '♌', icon: TbZodiacLeo, end: [8, 22], range: 'Jul 23 – Aug 22', element: 'Fire', planet: 'Sun', traits: ['Confident', 'Generous', 'Warm'] },
+  { name: 'Virgo', symbol: '♍', icon: TbZodiacVirgo, end: [9, 22], range: 'Aug 23 – Sep 22', element: 'Earth', planet: 'Mercury', traits: ['Thoughtful', 'Precise', 'Kind'] },
+  { name: 'Libra', symbol: '♎', icon: TbZodiacLibra, end: [10, 22], range: 'Sep 23 – Oct 22', element: 'Air', planet: 'Venus', traits: ['Charming', 'Fair', 'Social'] },
+  { name: 'Scorpio', symbol: '♏', icon: TbZodiacScorpio, end: [11, 21], range: 'Oct 23 – Nov 21', element: 'Water', planet: 'Pluto', traits: ['Passionate', 'Brave', 'Magnetic'] },
+  { name: 'Sagittarius', symbol: '♐', icon: TbZodiacSagittarius, end: [12, 21], range: 'Nov 22 – Dec 21', element: 'Fire', planet: 'Jupiter', traits: ['Adventurous', 'Optimistic', 'Free'] },
 ]
 
 export function zodiacOf(month, day) {
@@ -51,17 +54,17 @@ export const BIRTH_FLOWERS = [
 ]
 
 const ANIMALS = [
-  ['Rat', '🐀'], ['Ox', '🐂'], ['Tiger', '🐅'], ['Rabbit', '🐇'], ['Dragon', '🐉'], ['Snake', '🐍'],
-  ['Horse', '🐎'], ['Goat', '🐐'], ['Monkey', '🐒'], ['Rooster', '🐓'], ['Dog', '🐕'], ['Pig', '🐖'],
+  ['Rat', GiRat], ['Ox', GiCow], ['Tiger', GiTiger], ['Rabbit', GiRabbit], ['Dragon', GiDragonHead], ['Snake', GiSnake],
+  ['Horse', GiHorseHead], ['Goat', GiGoat], ['Monkey', GiMonkey], ['Rooster', GiRooster], ['Dog', GiSittingDog], ['Pig', GiPig],
 ]
 
 // Lunar new year falls between Jan 21 and Feb 20, so early year dates are approximate
 export function chineseZodiacOf(year, month, day) {
   const before = month === 0 && day < 21
   const y = before ? year - 1 : year
-  const [name, emoji] = ANIMALS[(((y - 4) % 12) + 12) % 12]
+  const [name, icon] = ANIMALS[(((y - 4) % 12) + 12) % 12]
   const approximate = (month === 0 && day >= 21) || (month === 1 && day <= 20)
-  return { name, emoji, approximate }
+  return { name, icon, approximate }
 }
 
 const RHYME = [

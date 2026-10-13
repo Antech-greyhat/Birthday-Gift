@@ -1,3 +1,6 @@
+import { LuCalendarDays, LuSunMoon, LuCalendarRange, LuEarth, LuSun, LuHourglass, LuHeartPulse, LuWind, LuMoon, LuRocket, LuBed } from 'react-icons/lu'
+import { GiFrog } from 'react-icons/gi'
+
 export const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 const DAY = 86400000
@@ -47,10 +50,10 @@ export function dateFacts(month, day, next) {
   const dayOfYear = Math.round((birthdayIn(next.getFullYear(), month, day) - start) / DAY) + 1
   const half = new Date(2001, month + 6, Math.min(day, daysInMonth((month + 6) % 12, 2001)))
   return [
-    { emoji: '📅', label: 'Next birthday falls on a', value: next.toLocaleDateString('en', { weekday: 'long' }) },
-    { emoji: '🌓', label: 'Half birthday', value: half.toLocaleDateString('en', { month: 'long', day: 'numeric' }) },
-    { emoji: '🗓️', label: 'Day of the year', value: `#${dayOfYear}` },
-    { emoji: '🌍', label: 'People sharing this birthday', value: `~${compact.format(8.1e9 / 365.25)}` },
+    { icon: LuCalendarDays, label: 'Next birthday falls on a', value: next.toLocaleDateString('en', { weekday: 'long' }) },
+    { icon: LuSunMoon, label: 'Half birthday', value: half.toLocaleDateString('en', { month: 'long', day: 'numeric' }) },
+    { icon: LuCalendarRange, label: 'Day of the year', value: `#${dayOfYear}` },
+    { icon: LuEarth, label: 'People sharing this birthday', value: `~${compact.format(8.1e9 / 365.25)}` },
   ]
 }
 
@@ -66,14 +69,14 @@ export function lifeFacts(birth, now) {
     if (isLeap(y) && d >= birth && d <= now) leapDays++
   }
   return [
-    { emoji: '☀️', label: 'Days on Earth', value: full.format(days) },
-    { emoji: '⏳', label: 'Hours lived', value: full.format(Math.floor(ms / 3600000)) },
-    { emoji: '💓', label: 'Heartbeats', value: compact.format(minutes * 80) },
-    { emoji: '🌬️', label: 'Breaths taken', value: compact.format(minutes * 16) },
-    { emoji: '🌕', label: 'Full moons seen', value: full.format(Math.floor(days / 29.53)) },
-    { emoji: '🚀', label: 'Km travelled around the Sun', value: compact.format(years * 940e6) },
-    { emoji: '😴', label: 'Years spent sleeping', value: (years / 3).toFixed(1) },
-    { emoji: '🐸', label: 'Leap days lived', value: full.format(leapDays) },
+    { icon: LuSun, label: 'Days on Earth', value: full.format(days) },
+    { icon: LuHourglass, label: 'Hours lived', value: full.format(Math.floor(ms / 3600000)) },
+    { icon: LuHeartPulse, label: 'Heartbeats', value: compact.format(minutes * 80) },
+    { icon: LuWind, label: 'Breaths taken', value: compact.format(minutes * 16) },
+    { icon: LuMoon, label: 'Full moons seen', value: full.format(Math.floor(days / 29.53)) },
+    { icon: LuRocket, label: 'Km travelled around the Sun', value: compact.format(years * 940e6) },
+    { icon: LuBed, label: 'Years spent sleeping', value: (years / 3).toFixed(1) },
+    { icon: GiFrog, label: 'Leap days lived', value: full.format(leapDays) },
   ]
 }
 

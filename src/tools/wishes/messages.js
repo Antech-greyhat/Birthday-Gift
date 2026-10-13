@@ -1,28 +1,32 @@
+import { LuBriefcase, LuChartLine, LuFlower, LuGamepad2, LuHandshake, LuHeart, LuLaugh, LuRibbon, LuSparkles, LuStar, LuZap } from 'react-icons/lu'
+import { TbBallFootball, TbBalloon, TbFriends, TbMan, TbOld, TbRings, TbWoman } from 'react-icons/tb'
+import { GiDiamondRing } from 'react-icons/gi'
+
 // Who the wish is for, with the word used when no name is given
 export const RECIPIENTS = [
-  { id: 'anyone', label: 'Anyone', emoji: '🎈', fallback: '' },
-  { id: 'mom', label: 'Mom', emoji: '👩', fallback: 'Mom' },
-  { id: 'dad', label: 'Dad', emoji: '👨', fallback: 'Dad' },
-  { id: 'wife', label: 'Wife', emoji: '💍', fallback: 'my love' },
-  { id: 'husband', label: 'Husband', emoji: '💑', fallback: 'my love' },
-  { id: 'partner', label: 'Partner', emoji: '💖', fallback: 'babe' },
-  { id: 'bestie', label: 'Best friend', emoji: '👯', fallback: 'bestie' },
-  { id: 'friend', label: 'Friend', emoji: '🤝', fallback: 'my friend' },
-  { id: 'sister', label: 'Sister', emoji: '👧', fallback: 'Sis' },
-  { id: 'brother', label: 'Brother', emoji: '👦', fallback: 'Bro' },
-  { id: 'daughter', label: 'Daughter', emoji: '🌸', fallback: 'sweetheart' },
-  { id: 'son', label: 'Son', emoji: '⚽', fallback: 'son' },
-  { id: 'grandparent', label: 'Grandparent', emoji: '👵', fallback: '' },
-  { id: 'coworker', label: 'Coworker', emoji: '💼', fallback: '' },
-  { id: 'boss', label: 'Boss', emoji: '📈', fallback: '' },
+  { id: 'anyone', label: 'Anyone', icon: TbBalloon, fallback: '' },
+  { id: 'mom', label: 'Mom', icon: TbWoman, fallback: 'Mom' },
+  { id: 'dad', label: 'Dad', icon: TbMan, fallback: 'Dad' },
+  { id: 'wife', label: 'Wife', icon: GiDiamondRing, fallback: 'my love' },
+  { id: 'husband', label: 'Husband', icon: TbRings, fallback: 'my love' },
+  { id: 'partner', label: 'Partner', icon: LuHeart, fallback: 'babe' },
+  { id: 'bestie', label: 'Best friend', icon: TbFriends, fallback: 'bestie' },
+  { id: 'friend', label: 'Friend', icon: LuHandshake, fallback: 'my friend' },
+  { id: 'sister', label: 'Sister', icon: LuRibbon, fallback: 'Sis' },
+  { id: 'brother', label: 'Brother', icon: LuGamepad2, fallback: 'Bro' },
+  { id: 'daughter', label: 'Daughter', icon: LuFlower, fallback: 'sweetheart' },
+  { id: 'son', label: 'Son', icon: TbBallFootball, fallback: 'son' },
+  { id: 'grandparent', label: 'Grandparent', icon: TbOld, fallback: '' },
+  { id: 'coworker', label: 'Coworker', icon: LuBriefcase, fallback: '' },
+  { id: 'boss', label: 'Boss', icon: LuChartLine, fallback: '' },
 ]
 
 export const TONES = [
-  { id: 'all', label: 'All', emoji: '✨' },
-  { id: 'heartfelt', label: 'Heartfelt', emoji: '❤️' },
-  { id: 'funny', label: 'Funny', emoji: '😂' },
-  { id: 'short', label: 'Short', emoji: '⚡' },
-  { id: 'inspirational', label: 'Inspiring', emoji: '🌟' },
+  { id: 'all', label: 'All', icon: LuSparkles },
+  { id: 'heartfelt', label: 'Heartfelt', icon: LuHeart },
+  { id: 'funny', label: 'Funny', icon: LuLaugh },
+  { id: 'short', label: 'Short', icon: LuZap },
+  { id: 'inspirational', label: 'Inspiring', icon: LuStar },
 ]
 
 const DATA = {

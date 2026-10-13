@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { LuHeart } from 'react-icons/lu'
+import { TbZodiacLeo } from 'react-icons/tb'
 import FlipNumber from './FlipNumber'
 import { useNow } from '../hooks/useNow'
 
@@ -27,7 +29,9 @@ export function CountdownArt() {
           </div>
         ))}
       </div>
-      <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-sun">♌ Leo · Peridot · 27 sleeps</span>
+      <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-sun">
+        <TbZodiacLeo /> Leo · Peridot · 27 sleeps
+      </span>
     </div>
   )
 }
@@ -36,9 +40,9 @@ export function CountdownArt() {
 export function WishesArt() {
   return (
     <div className="relative grid h-full place-items-center">
-      <span className="absolute bottom-6 left-[24%] animate-rise text-xl text-coral">♥</span>
-      <span className="absolute bottom-4 right-[26%] animate-rise text-lg text-lilac [animation-delay:1.3s]">♥</span>
-      <span className="absolute bottom-10 right-[40%] animate-rise text-sm text-coral [animation-delay:2.4s]">♥</span>
+      <LuHeart fill="currentColor" className="absolute bottom-6 left-[24%] animate-rise text-xl text-coral" />
+      <LuHeart fill="currentColor" className="absolute bottom-4 right-[26%] animate-rise text-lg text-lilac [animation-delay:1.3s]" />
+      <LuHeart fill="currentColor" className="absolute bottom-10 right-[40%] animate-rise text-sm text-coral [animation-delay:2.4s]" />
       <div className="relative h-32 w-24">
         <div className="absolute inset-0 -rotate-12 rounded-xl bg-linear-to-br from-[#ffd6e3] to-[#ff8fab] shadow-soft transition duration-500 group-hover:-translate-x-8 group-hover:-rotate-[22deg]" />
         <div className="absolute inset-0 rotate-12 rounded-xl bg-linear-to-br from-[#d9ccff] to-[#a77bff] shadow-soft transition duration-500 group-hover:translate-x-8 group-hover:rotate-[22deg]" />
