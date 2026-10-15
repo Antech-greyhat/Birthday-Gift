@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "birthday-studio-cli"
+version = "2.0.0"
+description = "Birthday Studio in your terminal: countdowns, wishes, invitations, QR sharing and a LAN party mode."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "typer>=0.12",
+  "rich>=13.7",
+  "textual>=0.80",
+  "segno>=1.6",
+  "pillow>=10.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+bday = "birthday_cli.app:main"
+
+[tool.setuptools.packages.find]
+include = ["birthday_cli*"]
+
+[tool.setuptools.package-data]
+birthday_cli = ["data/*.json", "share/templates/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wish wall · $title</title>
+<style>
+  :root { --ink: $ink; --sub: $sub; --accent: $accent; --panel: $panel; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: $bg; background-attachment: fixed; color: var(--ink);
+         font: 18px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 1400px; margin: 0 auto; padding: 32px 16px 48px; }
+  header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+  .eyebrow { margin: 0; color: var(--accent); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: 14px; }
+  h1 { margin: 6px 0 0; font: 600 clamp(32px, 5vw, 60px)/1.1 Georgia, "Times New Roman", serif; }
+  .counts { display: flex; gap: 10px; }
+  .count { min-width: 92px; padding: 10px 16px; border-radius: 18px; background: var(--panel); text-align: center; }
+  .count b { display: block; font-size: 32px; line-height: 1.1; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .count span { color: var(--sub); font-size: 14px; }
+  #wall { columns: 300px; column-gap: 16px; }
+  .wish { break-inside: avoid; margin: 0 0 16px; padding: 20px; border-radius: 22px; background: var(--panel);
+          animation: pop .5s ease-out both; }
+  .wish p { margin: 0; font: 22px/1.4 Georgia, "Times New Roman", serif; overflow-wrap: anywhere; }
+  .wish footer { margin-top: 10px; color: var(--sub); font-weight: 600; }
+  .empty { color: var(--sub); font-size: 22px; }
+  @keyframes pop { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+  @media (prefers-reduced-motion: reduce) { .wish { animation: none; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <p class="eyebrow">Wish wall</p>
+      <h1>$title</h1>
+    </div>
+    <div class="counts" aria-live="polite">
+      <div class="count"><b id="c-yes">0</b><span>coming</span></div>
+      <div class="count"><b id="c-maybe">0</b><span>maybe</span></div>
+    </div>
+  </header>
+  <div id="wall"></div>
+</main>
+<script>
+  const wall = document.getElementById('wall')
+  let version = -1
+
+  function render(state) {
+    if (state.version === version) return
+    version = state.version
+    document.getElementById('c-yes').textContent = state.counts.yes
+    document.getElementById('c-maybe').textContent = state.counts.maybe
+    wall.replaceChildren()
+    if (!state.wishes.length) {
+      const empty = document.createElement('p')
+      empty.className = 'empty'
+      empty.textContent = 'No wishes yet. Scan the code and be the first!'
+      wall.append(empty)
+      return
+    }
+    for (const w of state.wishes.slice().reverse()) {
+      const card = document.createElement('article')
+      card.className = 'wish'
+      const text = document.createElement('p')
+      text.textContent = w.message
+      const from = document.createElement('footer')
+      from.textContent = '— ' + w.name
+      card.append(text, from)
+      wall.append(card)
+    }
+  }
+
+  async function poll() {
+    try {
+      const res = await fetch('api/state', { cache: 'no-store' })
+      if (res.ok) render(await res.json())
+    } catch {}
+  }
+
+  render($state)
+  setInterval(poll, 3000)
+</script>
+</body>
+</html>

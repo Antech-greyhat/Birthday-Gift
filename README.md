@@ -167,6 +167,45 @@ The build uses relative paths and hash routing, so `dist/` can be dropped into G
 
 ---
 
+## Encore · The Terminal App
+
+The same three tools also run in a terminal, written in Python and kept in `cli/`. That folder is never deployed. You get it by cloning the repo and running it on your own computer.
+
+```bash
+git clone https://github.com/Antech-greyhat/Birthday-Gift.git
+cd Birthday-Gift/cli
+pip install .            # or: pipx install .
+bday                     # opens the full screen app
+```
+
+Python 3.10 or newer is required. On Windows, Windows Terminal draws the QR codes best.
+
+| Type | You get |
+| --- | --- |
+| `bday` | A full screen app with forms, live previews and keyboard shortcuts |
+| `bday countdown Ava 05-14 --year 1998 --live` | A ticking clock with star sign, birthstone and life stats |
+| `bday wish --to Ava --from Sam --for bestie --mood funny` | A wish from the same 216 messages, on a card |
+| `bday invite --example --poster party.png` | An invitation, a calendar file and a printable poster |
+| `bday party party.json` | Party Mode, see below |
+| `bday share <link>` | A QR code and share links for any address |
+| `bday list designs` | The card designs, recipients and moods to choose from |
+
+**Scan to open.** Every card ends with a QR code printed in the terminal. The code holds the same [shareable address](#shareable-addresses) the website makes, so a phone camera opens the full animated card on the live site. Nothing is uploaded. Add `--poster file.png` to save a printable poster with the code on it, or `--links` for WhatsApp, Telegram, X, Facebook and email links.
+
+**Party Mode.** `bday party` turns your computer into the party's front desk, with no internet needed:
+
+| Step | What happens |
+| --- | --- |
+| 1 | A QR code appears in your terminal. Print it with `--poster` or show it on screen |
+| 2 | Guests on the same Wi-Fi scan it and open the invitation from your computer |
+| 3 | They RSVP and leave a birthday wish. Both show up live in your terminal |
+| 4 | Open the wish wall link on a TV and the wishes appear as they come in |
+| 5 | Press Ctrl+C to stop. Replies are saved, so running it again picks up where you left off |
+
+Only devices on your network can reach it. Each party gets a random address, and the server stops when you close it. The [terminal app README](cli/README.md) lists every command and option.
+
+---
+
 ## Backstage
 
 ```
@@ -184,6 +223,16 @@ src/
 │   └── share, calendar, url, fonts helpers
 ├── hooks/                    ticking clock, saved state
 └── styles/index.css          design tokens and component classes
+
+cli/                          the terminal app, never deployed
+├── birthday_cli/
+│   ├── app.py                the bday command
+│   ├── tui/                  the full screen app
+│   ├── core/                 countdown maths, star signs, wishes, invitations
+│   ├── share/                links, QR codes and the Party Mode server
+│   ├── render/               printable posters
+│   └── data/wishes.json      the wish library, copied from the web app
+└── tests/
 ```
 
 The central idea is that every poster is one function:
@@ -266,7 +315,8 @@ Contributions of every size are welcome, from a typo fix to a whole new card des
 | Area | Ideas |
 | --- | --- |
 | Card designs | A new theme in `src/lib/canvas/themes.js`, with its own background and moving parts |
-| Wishes | More hand-written messages, recipients or tones in `src/tools/wishes/messages.js` |
+| Wishes | More hand-written messages, recipients or tones in `src/tools/wishes/messages.js`, copied to `cli/birthday_cli/data/wishes.json` too |
+| Terminal app | New commands, Party Mode features or terminal designs in `cli/` |
 | Languages | Translating the interface and wishes |
 | Accessibility | Screen reader, keyboard and contrast improvements |
 | Bugs | Anything that looks wrong on a phone, in a browser or in an exported video |
@@ -284,7 +334,7 @@ Contributions of every size are welcome, from a typo fix to a whole new card des
    git checkout -b feat/sparkly-new-theme
    ```
 3. **Make your change** and try it with `npm run dev`.
-4. **Check the build** passes with `npm run build`.
+4. **Check the build** passes with `npm run build`. For changes in `cli/`, run `pip install -e ".[dev]"` and then `pytest` inside that folder.
 5. **Commit** with a clear message, for example `feat: add aurora card theme` or `fix: year validation for babies born this year`.
 6. **Push** to your fork and **open a pull request** against `master`. Describe what changed, and add a screenshot for anything visual.
 
