@@ -171,14 +171,22 @@ The build uses relative paths and hash routing, so `dist/` can be dropped into G
 
 The same three tools also run in a terminal, written in Python and kept in `cli/`. That folder is never deployed. You get it by cloning the repo and running it on your own computer.
 
+<p align="center">
+  <img src="images/launcher.png" alt="The Birthday Studio terminal launcher with Countdown, Wishes and Invitation Maker" width="720" />
+  <br />
+  <sub>The launcher that opens when you run <code>bday</code></sub>
+</p>
+
 ```bash
 git clone https://github.com/Antech-greyhat/Birthday-Gift.git
 cd Birthday-Gift/cli
-pip install .            # or: pipx install .
+pipx install .           # or install into a virtual environment, see below
 bday                     # opens the full screen app
 ```
 
-Python 3.10 or newer is required. On Windows, Windows Terminal draws the QR codes best.
+Python 3.10 or newer is required. On Windows, Windows Terminal draws the QR codes best. Linux distributions such as Kali, Debian and Ubuntu block a plain `pip install .` with an `externally-managed-environment` error. Use pipx (`sudo apt install pipx`), or create a virtual environment first: `python3 -m venv .venv && source .venv/bin/activate && pip install .`
+
+To update to the latest version, run `git pull` in your clone, then reinstall from the `cli` folder with `pipx install --force .` (or `pip install --upgrade .` inside your virtual environment). Your Party Mode replies are kept. The [terminal app README](cli/README.md#update) covers every install type.
 
 | Type | You get |
 | --- | --- |
@@ -189,6 +197,12 @@ Python 3.10 or newer is required. On Windows, Windows Terminal draws the QR code
 | `bday party party.json` | Party Mode, see below |
 | `bday share <link>` | A QR code and share links for any address |
 | `bday list designs` | The card designs, recipients and moods to choose from |
+
+<p align="center">
+  <img src="images/countdown.png" alt="The countdown screen with the live clock, star sign, birthstone and date facts" width="100%" />
+  <br />
+  <sub>The countdown: a form on the left, the live clock and facts on the right</sub>
+</p>
 
 **Scan to open.** Every card ends with a QR code printed in the terminal. The code holds the same [shareable address](#shareable-addresses) the website makes, so a phone camera opens the full animated card on the live site. Nothing is uploaded. Add `--poster file.png` to save a printable poster with the code on it, or `--links` for WhatsApp, Telegram, X, Facebook and email links.
 
@@ -201,6 +215,12 @@ Python 3.10 or newer is required. On Windows, Windows Terminal draws the QR code
 | 3 | They RSVP and leave a birthday wish. Both show up live in your terminal |
 | 4 | Open the wish wall link on a TV and the wishes appear as they come in |
 | 5 | Press Ctrl+C to stop. Replies are saved, so running it again picks up where you left off |
+
+<p align="center">
+  <img src="images/party-mode.png" alt="Party Mode dashboard with the join QR code, RSVP table, wish wall and activity log" width="100%" />
+  <br />
+  <sub>Party Mode: guests scan to join, and RSVPs and wishes arrive live. The QR code, addresses and file path are blurred here</sub>
+</p>
 
 Only devices on your network can reach it. Each party gets a random address, and the server stops when you close it. The [terminal app README](cli/README.md) lists every command and option.
 

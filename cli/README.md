@@ -21,23 +21,85 @@
 
 This is the command line companion to the [Birthday Studio website](https://birthday-gift-wish.vercel.app/). It is not deployed anywhere. You clone the repository and run it on your own computer.
 
+<p align="center">
+  <img src="../images/launcher.png" alt="The Birthday Studio terminal launcher with Countdown, Wishes and Invitation Maker" width="720" />
+  <br />
+  <sub>The launcher that opens when you run <code>bday</code></sub>
+</p>
+
 ---
 
 ## Install
 
+The easiest way is [pipx](https://pipx.pypa.io/), which installs the app in its own environment and puts `bday` on your path:
+
 ```bash
 git clone https://github.com/Antech-greyhat/Birthday-Gift.git
 cd Birthday-Gift/cli
-pip install .
+pipx install .
+bday
 ```
 
-`pipx install .` works too and keeps the app in its own environment. Either way you get a `bday` command. Without installing, `python -m birthday_cli` runs it from this folder once the dependencies are present.
+Without pipx, use a virtual environment:
+
+```bash
+cd Birthday-Gift/cli
+python3 -m venv .venv
+source .venv/bin/activate       # Windows: .venv\Scripts\activate
+pip install .
+bday
+```
+
+After a venv install, run `source .venv/bin/activate` in each new terminal before using `bday`, or call `.venv/bin/bday` directly.
 
 | Platform | Notes |
 | --- | --- |
+| Kali, Debian, Ubuntu, Fedora, Arch | Plain `pip install .` stops with `externally-managed-environment`. Use pipx (`sudo apt install pipx && pipx ensurepath`) or the venv steps above |
 | Windows | Use Windows Terminal for crisp QR codes. Allow Python through the firewall when Party Mode asks |
 | macOS, Linux | Any modern terminal works |
 | Old or colourless terminals | Add `--qr-style wide` or `--qr-style ascii` |
+
+---
+
+## Update
+
+When new changes land on GitHub, pull them into your clone and then reinstall. Pick the steps that match how you installed:
+
+**Installed with pipx**
+
+```bash
+cd Birthday-Gift
+git pull
+cd cli
+pipx install --force .
+```
+
+**Installed in a virtual environment**
+
+```bash
+cd Birthday-Gift
+git pull
+cd cli
+source .venv/bin/activate       # Windows: .venv\Scripts\activate
+pip install --upgrade .
+```
+
+**Installed for development with `pip install -e .`**
+
+```bash
+git pull
+pip install -e ".[dev]"         # only needed when dependencies changed, harmless otherwise
+```
+
+Then run `bday --version` to check that the new version is installed.
+
+| Situation | What to do |
+| --- | --- |
+| `git pull` says you have local changes | Run `git stash`, then `git pull`, then `git stash pop` to put your changes back |
+| `bday` still shows the old version | Close and reopen the terminal, or check that `which bday` (Windows: `where bday`) points to the install you updated |
+| Something broke after updating | Reinstall from scratch: `pipx uninstall birthday-studio-cli` then `pipx install .`, or delete `.venv` and repeat the install steps |
+
+Updating never touches your Party Mode replies. They stay in `~/.birthday-studio/parties/`.
 
 ---
 
@@ -68,6 +130,12 @@ Every command has `--help`.
 | `--open` | Open the card in your browser |
 
 ### Countdown
+
+<p align="center">
+  <img src="../images/countdown.png" alt="The countdown screen with the live clock, star sign, birthstone and date facts" width="100%" />
+  <br />
+  <sub>The countdown: a form on the left, the live clock and facts on the right</sub>
+</p>
 
 ```bash
 bday countdown Ava 05-14
@@ -109,6 +177,12 @@ bday invite --from-link "https://birthday-gift-wish.vercel.app/#/invitation?view
 **Paper invitations.** `--poster` prints the details and the QR code onto a PNG you can print or send as an image.
 
 **Party Mode.** No internet needed, only a shared Wi-Fi network.
+
+<p align="center">
+  <img src="../images/party-mode.png" alt="Party Mode dashboard with the join QR code, RSVP table, wish wall and activity log" width="100%" />
+  <br />
+  <sub>Party Mode: guests scan to join, and RSVPs and wishes arrive live. The QR code, addresses and file path are blurred here</sub>
+</p>
 
 ```bash
 bday party party.json                 # an invitation saved with --save
