@@ -1,0 +1,1395 @@
+{
+  "recipients": [
+    {
+      "id": "anyone",
+      "label": "Anyone",
+      "fallback": ""
+    },
+    {
+      "id": "mom",
+      "label": "Mom",
+      "fallback": "Mom"
+    },
+    {
+      "id": "dad",
+      "label": "Dad",
+      "fallback": "Dad"
+    },
+    {
+      "id": "wife",
+      "label": "Wife",
+      "fallback": "my love"
+    },
+    {
+      "id": "husband",
+      "label": "Husband",
+      "fallback": "my love"
+    },
+    {
+      "id": "partner",
+      "label": "Partner",
+      "fallback": "babe"
+    },
+    {
+      "id": "bestie",
+      "label": "Best friend",
+      "fallback": "bestie"
+    },
+    {
+      "id": "friend",
+      "label": "Friend",
+      "fallback": "my friend"
+    },
+    {
+      "id": "sister",
+      "label": "Sister",
+      "fallback": "Sis"
+    },
+    {
+      "id": "brother",
+      "label": "Brother",
+      "fallback": "Bro"
+    },
+    {
+      "id": "daughter",
+      "label": "Daughter",
+      "fallback": "sweetheart"
+    },
+    {
+      "id": "son",
+      "label": "Son",
+      "fallback": "son"
+    },
+    {
+      "id": "grandparent",
+      "label": "Grandparent",
+      "fallback": ""
+    },
+    {
+      "id": "coworker",
+      "label": "Coworker",
+      "fallback": ""
+    },
+    {
+      "id": "boss",
+      "label": "Boss",
+      "fallback": ""
+    }
+  ],
+  "tones": [
+    {
+      "id": "heartfelt",
+      "label": "Heartfelt"
+    },
+    {
+      "id": "funny",
+      "label": "Funny"
+    },
+    {
+      "id": "short",
+      "label": "Short"
+    },
+    {
+      "id": "inspirational",
+      "label": "Inspiring"
+    }
+  ],
+  "messages": [
+    {
+      "id": "anyone-heartfelt-0",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! May this year wrap you in the same kindness you give everyone else. You deserve every bit of joy coming your way."
+    },
+    {
+      "id": "anyone-heartfelt-1",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "Wishing you a birthday as warm and wonderful as you are, {name}. Here's to laughter, love and all the little moments that make life sweet."
+    },
+    {
+      "id": "anyone-heartfelt-2",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! The world is brighter with you in it, and today is the perfect day to celebrate that."
+    },
+    {
+      "id": "anyone-heartfelt-3",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "On your special day, {name}, I hope you feel how deeply you're appreciated. Thank you for being exactly who you are."
+    },
+    {
+      "id": "anyone-heartfelt-4",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! May your heart be full, your days be gentle and your year be packed with reasons to smile."
+    },
+    {
+      "id": "anyone-heartfelt-5",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "Another year of you is a gift to everyone who knows you. Happy birthday, {name}, and enjoy every moment."
+    },
+    {
+      "id": "anyone-heartfelt-6",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "Sending you a birthday hug wrapped in gratitude, {name}. May this new chapter be your most beautiful yet."
+    },
+    {
+      "id": "anyone-heartfelt-7",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! I hope today reminds you how loved you are, today and every day."
+    },
+    {
+      "id": "anyone-heartfelt-8",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "May your birthday be filled with people who make you laugh, food that makes you happy and wishes that come true. Happy birthday, {name}!"
+    },
+    {
+      "id": "anyone-heartfelt-9",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "Here's to you, {name}, and to a year of dreams fulfilled, friendships deepened and joy that lingers. Happy birthday!"
+    },
+    {
+      "id": "anyone-heartfelt-10",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "Some people make the world softer just by being in it. You're one of them, {name}. Happy birthday!"
+    },
+    {
+      "id": "anyone-heartfelt-11",
+      "to": "anyone",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Wishing you peace in your heart, light on your path and love all around you."
+    },
+    {
+      "id": "anyone-funny-0",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Don't worry about getting older. You're still way younger than you'll be next year."
+    },
+    {
+      "id": "anyone-funny-1",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "Age is just a number. In your case, a pretty big one. Happy birthday, {name}! 🎂"
+    },
+    {
+      "id": "anyone-funny-2",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Remember, you're not old, you're vintage. And vintage is very expensive."
+    },
+    {
+      "id": "anyone-funny-3",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "They say with age comes wisdom. You must be a genius by now, {name}. Happy birthday!"
+    },
+    {
+      "id": "anyone-funny-4",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Today you're allowed to eat cake for breakfast. Honestly, you'd do it anyway."
+    },
+    {
+      "id": "anyone-funny-5",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "Cheers to another trip around the sun, {name}! No wonder you look a little dizzy. Happy birthday!"
+    },
+    {
+      "id": "anyone-funny-6",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! I was going to get you something amazing, then I remembered you already have me."
+    },
+    {
+      "id": "anyone-funny-7",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "Don't count the candles, {name}. The fire department says it's a safety issue. Happy birthday!"
+    },
+    {
+      "id": "anyone-funny-8",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! You're officially one year closer to telling kids 'back in my day…'"
+    },
+    {
+      "id": "anyone-funny-9",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "Studies show that people who have more birthdays live longer. Keep it up, {name}! Happy birthday!"
+    },
+    {
+      "id": "anyone-funny-10",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! May your cake be big, your calories be invisible and your phone stay on silent."
+    },
+    {
+      "id": "anyone-funny-11",
+      "to": "anyone",
+      "tone": "funny",
+      "text": "At your age, {name}, you've earned the right to nap anytime, anywhere. Happy birthday!"
+    },
+    {
+      "id": "anyone-short-0",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Shine bright today. ✨"
+    },
+    {
+      "id": "anyone-short-1",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Cheers to you, {name}! Have the best day ever."
+    },
+    {
+      "id": "anyone-short-2",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Eat cake, make wishes, repeat."
+    },
+    {
+      "id": "anyone-short-3",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Wishing you a day as awesome as you, {name}!"
+    },
+    {
+      "id": "anyone-short-4",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Here's to a fabulous year."
+    },
+    {
+      "id": "anyone-short-5",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Another year older, another year wiser. Happy birthday, {name}!"
+    },
+    {
+      "id": "anyone-short-6",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Hip hip hooray, it's your day, {name}! 🎉"
+    },
+    {
+      "id": "anyone-short-7",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Big hugs and happy birthday, {name}!"
+    },
+    {
+      "id": "anyone-short-8",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Make it sparkle."
+    },
+    {
+      "id": "anyone-short-9",
+      "to": "anyone",
+      "tone": "short",
+      "text": "May all your wishes come true, {name}. Happy birthday!"
+    },
+    {
+      "id": "anyone-short-10",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Happy birthday, {name}! You deserve all the cake."
+    },
+    {
+      "id": "anyone-short-11",
+      "to": "anyone",
+      "tone": "short",
+      "text": "Celebrate big, {name}. It's your day!"
+    },
+    {
+      "id": "anyone-inspirational-0",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! May this be the year you chase every dream that makes your heart race."
+    },
+    {
+      "id": "anyone-inspirational-1",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "A new year of life is a blank page, {name}. Write a story you'll love to read. Happy birthday!"
+    },
+    {
+      "id": "anyone-inspirational-2",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Never forget how far you've come, and get excited for how far you'll go."
+    },
+    {
+      "id": "anyone-inspirational-3",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Here's to growing bolder, braver and brighter with every year, {name}. Happy birthday!"
+    },
+    {
+      "id": "anyone-inspirational-4",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! May you find courage in your challenges and joy in your journey."
+    },
+    {
+      "id": "anyone-inspirational-5",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Every birthday is a reminder that it's never too late to begin again. Make this year count, {name}!"
+    },
+    {
+      "id": "anyone-inspirational-6",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Keep believing in yourself. The best is still ahead."
+    },
+    {
+      "id": "anyone-inspirational-7",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Life is measured in moments, not years. Wishing you a year full of unforgettable ones, {name}."
+    },
+    {
+      "id": "anyone-inspirational-8",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! May you bloom where you are planted and keep growing toward the light."
+    },
+    {
+      "id": "anyone-inspirational-9",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Your potential has no expiry date, {name}. Happy birthday, and here's to your next big leap!"
+    },
+    {
+      "id": "anyone-inspirational-10",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Dream big, start small and begin today."
+    },
+    {
+      "id": "anyone-inspirational-11",
+      "to": "anyone",
+      "tone": "inspirational",
+      "text": "Another year, another chance to become who you want to be. Go get it, {name}! Happy birthday!"
+    },
+    {
+      "id": "mom-heartfelt-0",
+      "to": "mom",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! You gave me roots to grow and wings to fly. Everything good in me started with you."
+    },
+    {
+      "id": "mom-heartfelt-1",
+      "to": "mom",
+      "tone": "heartfelt",
+      "text": "{name}, your love is the home I always come back to. Thank you for every hug, every sacrifice and every 'I'm proud of you.' Happy birthday!"
+    },
+    {
+      "id": "mom-heartfelt-2",
+      "to": "mom",
+      "tone": "heartfelt",
+      "text": "To the woman who taught me kindness by example, happy birthday, {name}. I love you more than words can hold."
+    },
+    {
+      "id": "mom-funny-0",
+      "to": "mom",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Thanks for not selling me during my teenage years."
+    },
+    {
+      "id": "mom-funny-1",
+      "to": "mom",
+      "tone": "funny",
+      "text": "{name}, you're the reason I'm so fabulous. It's genetic, I checked. Happy birthday!"
+    },
+    {
+      "id": "mom-funny-2",
+      "to": "mom",
+      "tone": "funny",
+      "text": "Happy birthday to the only person who knows what I think before I do. A little scary, {name}, but I love you!"
+    },
+    {
+      "id": "mom-short-0",
+      "to": "mom",
+      "tone": "short",
+      "text": "Happy birthday, {name}! You're my forever hero. ❤️"
+    },
+    {
+      "id": "mom-short-1",
+      "to": "mom",
+      "tone": "short",
+      "text": "Best mom ever? Obviously. Happy birthday, {name}!"
+    },
+    {
+      "id": "mom-short-2",
+      "to": "mom",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Love you to the moon and back."
+    },
+    {
+      "id": "mom-inspirational-0",
+      "to": "mom",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Your strength showed me that anything is possible. May this year give back everything you've given us."
+    },
+    {
+      "id": "mom-inspirational-1",
+      "to": "mom",
+      "tone": "inspirational",
+      "text": "{name}, you've spent years making our dreams come true. This year, I hope you chase your own. Happy birthday!"
+    },
+    {
+      "id": "mom-inspirational-2",
+      "to": "mom",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Your grace and courage light the way for all of us."
+    },
+    {
+      "id": "dad-heartfelt-0",
+      "to": "dad",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Thank you for being my first hero, my steady rock and my biggest fan."
+    },
+    {
+      "id": "dad-heartfelt-1",
+      "to": "dad",
+      "tone": "heartfelt",
+      "text": "{name}, every lesson you taught me, patience, hard work and kindness, I carry with me every day. Happy birthday, with all my love."
+    },
+    {
+      "id": "dad-heartfelt-2",
+      "to": "dad",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! I hope you know how much your quiet strength means to all of us."
+    },
+    {
+      "id": "dad-funny-0",
+      "to": "dad",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! I got you this card instead of another tie. You're welcome."
+    },
+    {
+      "id": "dad-funny-1",
+      "to": "dad",
+      "tone": "funny",
+      "text": "{name}, I'd tell you a dad joke for your birthday, but you already know them all. Happy birthday!"
+    },
+    {
+      "id": "dad-funny-2",
+      "to": "dad",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Don't worry, nobody touched the thermostat today."
+    },
+    {
+      "id": "dad-short-0",
+      "to": "dad",
+      "tone": "short",
+      "text": "Happy birthday to the best dad ever, {name}!"
+    },
+    {
+      "id": "dad-short-1",
+      "to": "dad",
+      "tone": "short",
+      "text": "Cheers to you, {name}! Love you always."
+    },
+    {
+      "id": "dad-short-2",
+      "to": "dad",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Still my superhero."
+    },
+    {
+      "id": "dad-inspirational-0",
+      "to": "dad",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! You showed me that real strength is gentle. May your year be as great as your heart."
+    },
+    {
+      "id": "dad-inspirational-1",
+      "to": "dad",
+      "tone": "inspirational",
+      "text": "{name}, you taught me to never give up. Here's to a year where your dreams get the spotlight. Happy birthday!"
+    },
+    {
+      "id": "dad-inspirational-2",
+      "to": "dad",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! The best is yet to come, and you deserve every bit of it."
+    },
+    {
+      "id": "wife-heartfelt-0",
+      "to": "wife",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Every day with you feels like a gift, and today I get to celebrate the greatest one."
+    },
+    {
+      "id": "wife-heartfelt-1",
+      "to": "wife",
+      "tone": "heartfelt",
+      "text": "{name}, you are my home, my heart and my favorite hello. Happy birthday to the love of my life."
+    },
+    {
+      "id": "wife-heartfelt-2",
+      "to": "wife",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! I fall for you a little more every year, and this year is no different."
+    },
+    {
+      "id": "wife-funny-0",
+      "to": "wife",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! I still can't believe you said yes. Please don't reconsider."
+    },
+    {
+      "id": "wife-funny-1",
+      "to": "wife",
+      "tone": "funny",
+      "text": "{name}, you get to choose the movie tonight. Happy birthday, and enjoy that power while it lasts!"
+    },
+    {
+      "id": "wife-funny-2",
+      "to": "wife",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Thanks for putting up with me for another year. You deserve a medal, and cake."
+    },
+    {
+      "id": "wife-short-0",
+      "to": "wife",
+      "tone": "short",
+      "text": "Happy birthday, {name}! You're my everything. ❤️"
+    },
+    {
+      "id": "wife-short-1",
+      "to": "wife",
+      "tone": "short",
+      "text": "To my favorite person, happy birthday, {name}!"
+    },
+    {
+      "id": "wife-short-2",
+      "to": "wife",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Forever yours."
+    },
+    {
+      "id": "wife-inspirational-0",
+      "to": "wife",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Your strength and grace inspire me every single day."
+    },
+    {
+      "id": "wife-inspirational-1",
+      "to": "wife",
+      "tone": "inspirational",
+      "text": "{name}, may this year bring every dream you've been holding close. I'll be right beside you. Happy birthday!"
+    },
+    {
+      "id": "wife-inspirational-2",
+      "to": "wife",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Here's to growing, laughing and building our dreams together."
+    },
+    {
+      "id": "husband-heartfelt-0",
+      "to": "husband",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! You're my best friend, my partner and my favorite place to land."
+    },
+    {
+      "id": "husband-heartfelt-1",
+      "to": "husband",
+      "tone": "heartfelt",
+      "text": "{name}, life with you is my favorite story. Happy birthday to the one who makes every day better."
+    },
+    {
+      "id": "husband-heartfelt-2",
+      "to": "husband",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! I'm so grateful the universe led me to you."
+    },
+    {
+      "id": "husband-funny-0",
+      "to": "husband",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! You're aging like fine wine, especially in the snoring department."
+    },
+    {
+      "id": "husband-funny-1",
+      "to": "husband",
+      "tone": "funny",
+      "text": "{name}, today you get the remote all day. Happy birthday, and don't get used to it!"
+    },
+    {
+      "id": "husband-funny-2",
+      "to": "husband",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! I love you even more than you love the last slice of pizza."
+    },
+    {
+      "id": "husband-short-0",
+      "to": "husband",
+      "tone": "short",
+      "text": "Happy birthday, {name}! My one and only. ❤️"
+    },
+    {
+      "id": "husband-short-1",
+      "to": "husband",
+      "tone": "short",
+      "text": "Cheers to you, {name}! Love you endlessly."
+    },
+    {
+      "id": "husband-short-2",
+      "to": "husband",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Lucky me."
+    },
+    {
+      "id": "husband-inspirational-0",
+      "to": "husband",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Your kindness and determination inspire me every day."
+    },
+    {
+      "id": "husband-inspirational-1",
+      "to": "husband",
+      "tone": "inspirational",
+      "text": "{name}, may this year bring new adventures and dreams worth chasing, together. Happy birthday!"
+    },
+    {
+      "id": "husband-inspirational-2",
+      "to": "husband",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! I can't wait to see everything you'll achieve this year."
+    },
+    {
+      "id": "partner-heartfelt-0",
+      "to": "partner",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! You make ordinary days feel magical, and I'm so lucky to be yours."
+    },
+    {
+      "id": "partner-heartfelt-1",
+      "to": "partner",
+      "tone": "heartfelt",
+      "text": "{name}, my favorite moments all have you in them. Happy birthday, my love."
+    },
+    {
+      "id": "partner-heartfelt-2",
+      "to": "partner",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Thank you for the laughter, the late night talks and the way you look at me."
+    },
+    {
+      "id": "partner-funny-0",
+      "to": "partner",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! I promise to like all your birthday photos, even the blurry ones."
+    },
+    {
+      "id": "partner-funny-1",
+      "to": "partner",
+      "tone": "funny",
+      "text": "{name}, you're my favorite notification. Happy birthday!"
+    },
+    {
+      "id": "partner-funny-2",
+      "to": "partner",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! I was going to wrap myself up as your gift, but I couldn't find a big enough bow."
+    },
+    {
+      "id": "partner-short-0",
+      "to": "partner",
+      "tone": "short",
+      "text": "Happy birthday, {name}! You're my favorite. 💖"
+    },
+    {
+      "id": "partner-short-1",
+      "to": "partner",
+      "tone": "short",
+      "text": "Happy birthday to my person, {name}!"
+    },
+    {
+      "id": "partner-short-2",
+      "to": "partner",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Kisses and cake."
+    },
+    {
+      "id": "partner-inspirational-0",
+      "to": "partner",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! I can't wait to watch you chase your dreams this year, and I'll be cheering the loudest."
+    },
+    {
+      "id": "partner-inspirational-1",
+      "to": "partner",
+      "tone": "inspirational",
+      "text": "{name}, here's to new memories, bold adventures and growing together. Happy birthday!"
+    },
+    {
+      "id": "partner-inspirational-2",
+      "to": "partner",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! You make me want to be better every day."
+    },
+    {
+      "id": "bestie-heartfelt-0",
+      "to": "bestie",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Friends like you are rare treasures, and I'm keeping you forever."
+    },
+    {
+      "id": "bestie-heartfelt-1",
+      "to": "bestie",
+      "tone": "heartfelt",
+      "text": "{name}, you've seen me at my best and my worst and stayed anyway. That's love. Happy birthday!"
+    },
+    {
+      "id": "bestie-heartfelt-2",
+      "to": "bestie",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Life is so much better with you as my sidekick."
+    },
+    {
+      "id": "bestie-funny-0",
+      "to": "bestie",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! You know too much, so we have to stay friends forever."
+    },
+    {
+      "id": "bestie-funny-1",
+      "to": "bestie",
+      "tone": "funny",
+      "text": "{name}, we'll be friends until we're old and forgetful. Then we'll be new friends. Happy birthday!"
+    },
+    {
+      "id": "bestie-funny-2",
+      "to": "bestie",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Thanks for being the reason I laugh at the worst possible moments."
+    },
+    {
+      "id": "bestie-short-0",
+      "to": "bestie",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Besties forever. 👯"
+    },
+    {
+      "id": "bestie-short-1",
+      "to": "bestie",
+      "tone": "short",
+      "text": "Happy birthday to my favorite human, {name}!"
+    },
+    {
+      "id": "bestie-short-2",
+      "to": "bestie",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Let's celebrate like legends."
+    },
+    {
+      "id": "bestie-inspirational-0",
+      "to": "bestie",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! I'm so proud of you. This is your year to shine."
+    },
+    {
+      "id": "bestie-inspirational-1",
+      "to": "bestie",
+      "tone": "inspirational",
+      "text": "{name}, you make me braver. May this year make your wildest dreams come true. Happy birthday!"
+    },
+    {
+      "id": "bestie-inspirational-2",
+      "to": "bestie",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Keep being fearless, funny and fabulous."
+    },
+    {
+      "id": "friend-heartfelt-0",
+      "to": "friend",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! I'm so thankful our paths crossed. Here's to many more memories together."
+    },
+    {
+      "id": "friend-heartfelt-1",
+      "to": "friend",
+      "tone": "heartfelt",
+      "text": "{name}, your friendship is one of life's sweetest gifts. Happy birthday!"
+    },
+    {
+      "id": "friend-heartfelt-2",
+      "to": "friend",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Wishing you a day as kind and genuine as you are."
+    },
+    {
+      "id": "friend-funny-0",
+      "to": "friend",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! I'd share my wisdom with you, but you'd ignore it like always."
+    },
+    {
+      "id": "friend-funny-1",
+      "to": "friend",
+      "tone": "funny",
+      "text": "{name}, it's your birthday, so you can blame everything on your age today. Enjoy it!"
+    },
+    {
+      "id": "friend-funny-2",
+      "to": "friend",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Calories don't count today. I checked."
+    },
+    {
+      "id": "friend-short-0",
+      "to": "friend",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Have a blast. 🎈"
+    },
+    {
+      "id": "friend-short-1",
+      "to": "friend",
+      "tone": "short",
+      "text": "Cheers to you, {name}! Enjoy your day."
+    },
+    {
+      "id": "friend-short-2",
+      "to": "friend",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Hope it's a great one."
+    },
+    {
+      "id": "friend-inspirational-0",
+      "to": "friend",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! May this year bring new opportunities and big wins."
+    },
+    {
+      "id": "friend-inspirational-1",
+      "to": "friend",
+      "tone": "inspirational",
+      "text": "{name}, keep going after whatever lights you up. Happy birthday!"
+    },
+    {
+      "id": "friend-inspirational-2",
+      "to": "friend",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Here's to a year of growth and good vibes."
+    },
+    {
+      "id": "sister-heartfelt-0",
+      "to": "sister",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! You're my built in best friend, my secret keeper and my favorite person to laugh with."
+    },
+    {
+      "id": "sister-heartfelt-1",
+      "to": "sister",
+      "tone": "heartfelt",
+      "text": "{name}, life gave me a sister, and luckily it was you. Happy birthday, I'm so grateful for us."
+    },
+    {
+      "id": "sister-heartfelt-2",
+      "to": "sister",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! No matter how far apart we are, you're always close to my heart."
+    },
+    {
+      "id": "sister-funny-0",
+      "to": "sister",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! I'm still the favorite, but you're a close second."
+    },
+    {
+      "id": "sister-funny-1",
+      "to": "sister",
+      "tone": "funny",
+      "text": "{name}, thanks for all the clothes I borrowed and never returned. Happy birthday!"
+    },
+    {
+      "id": "sister-funny-2",
+      "to": "sister",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! You're getting older, but I'll always be the cooler one."
+    },
+    {
+      "id": "sister-short-0",
+      "to": "sister",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Sisters forever. 💕"
+    },
+    {
+      "id": "sister-short-1",
+      "to": "sister",
+      "tone": "short",
+      "text": "To my partner in crime, happy birthday, {name}!"
+    },
+    {
+      "id": "sister-short-2",
+      "to": "sister",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Love you lots."
+    },
+    {
+      "id": "sister-inspirational-0",
+      "to": "sister",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Watching you become who you are has been my greatest inspiration."
+    },
+    {
+      "id": "sister-inspirational-1",
+      "to": "sister",
+      "tone": "inspirational",
+      "text": "{name}, may this year bring you the courage to chase every dream. I'm cheering for you always. Happy birthday!"
+    },
+    {
+      "id": "sister-inspirational-2",
+      "to": "sister",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Keep shining your light. The world needs it."
+    },
+    {
+      "id": "brother-heartfelt-0",
+      "to": "brother",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Growing up with you was the best adventure, and I'm proud to call you my brother."
+    },
+    {
+      "id": "brother-heartfelt-1",
+      "to": "brother",
+      "tone": "heartfelt",
+      "text": "{name}, you've always had my back. Today I've got yours. Happy birthday!"
+    },
+    {
+      "id": "brother-heartfelt-2",
+      "to": "brother",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Thank you for the laughs, the fights and the forever friendship."
+    },
+    {
+      "id": "brother-funny-0",
+      "to": "brother",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! I'd say you're my favorite brother, but let's not get carried away."
+    },
+    {
+      "id": "brother-funny-1",
+      "to": "brother",
+      "tone": "funny",
+      "text": "{name}, you're lucky to have a sibling as awesome as me. Happy birthday!"
+    },
+    {
+      "id": "brother-funny-2",
+      "to": "brother",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Don't worry about getting older. You never really grew up anyway."
+    },
+    {
+      "id": "brother-short-0",
+      "to": "brother",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Have an epic one. 🎉"
+    },
+    {
+      "id": "brother-short-1",
+      "to": "brother",
+      "tone": "short",
+      "text": "Cheers, {name}! Brothers for life."
+    },
+    {
+      "id": "brother-short-2",
+      "to": "brother",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Party hard."
+    },
+    {
+      "id": "brother-inspirational-0",
+      "to": "brother",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Go after this year like you used to go after the last slice of pizza."
+    },
+    {
+      "id": "brother-inspirational-1",
+      "to": "brother",
+      "tone": "inspirational",
+      "text": "{name}, I believe in you more than you know. Here's to your best year yet. Happy birthday!"
+    },
+    {
+      "id": "brother-inspirational-2",
+      "to": "brother",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Keep building, keep dreaming, keep being you."
+    },
+    {
+      "id": "daughter-heartfelt-0",
+      "to": "daughter",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! You fill our home with light and our hearts with love."
+    },
+    {
+      "id": "daughter-heartfelt-1",
+      "to": "daughter",
+      "tone": "heartfelt",
+      "text": "{name}, you are my greatest blessing. Watching you grow is the best gift I've ever received. Happy birthday!"
+    },
+    {
+      "id": "daughter-heartfelt-2",
+      "to": "daughter",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! I'll always be your biggest fan, your safe place and your forever cheerleader."
+    },
+    {
+      "id": "daughter-funny-0",
+      "to": "daughter",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! I'll stop calling you my baby when you stop being adorable. So, never."
+    },
+    {
+      "id": "daughter-funny-1",
+      "to": "daughter",
+      "tone": "funny",
+      "text": "{name}, you get your sense of humor from me. And your style. Mostly from me. Happy birthday!"
+    },
+    {
+      "id": "daughter-funny-2",
+      "to": "daughter",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! You can borrow my things today. Today only."
+    },
+    {
+      "id": "daughter-short-0",
+      "to": "daughter",
+      "tone": "short",
+      "text": "Happy birthday, {name}! You're my sunshine. 🌸"
+    },
+    {
+      "id": "daughter-short-1",
+      "to": "daughter",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Love you endlessly."
+    },
+    {
+      "id": "daughter-short-2",
+      "to": "daughter",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Shine bright, little star."
+    },
+    {
+      "id": "daughter-inspirational-0",
+      "to": "daughter",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Be brave, be kind and never let anyone dim your sparkle."
+    },
+    {
+      "id": "daughter-inspirational-1",
+      "to": "daughter",
+      "tone": "inspirational",
+      "text": "{name}, there's nothing you can't do. Here's to your brightest year yet. Happy birthday!"
+    },
+    {
+      "id": "daughter-inspirational-2",
+      "to": "daughter",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Chase your dreams, I'll be cheering every step of the way."
+    },
+    {
+      "id": "son-heartfelt-0",
+      "to": "son",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! From the moment you arrived, you made our world complete."
+    },
+    {
+      "id": "son-heartfelt-1",
+      "to": "son",
+      "tone": "heartfelt",
+      "text": "{name}, watching you grow has been the greatest joy of my life. Happy birthday, I love you always."
+    },
+    {
+      "id": "son-heartfelt-2",
+      "to": "son",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! I'm proud of the person you are and the person you're becoming."
+    },
+    {
+      "id": "son-funny-0",
+      "to": "son",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! You get your good looks from me. You're welcome."
+    },
+    {
+      "id": "son-funny-1",
+      "to": "son",
+      "tone": "funny",
+      "text": "{name}, you're one year older, which means one more year of me embarrassing you. Happy birthday!"
+    },
+    {
+      "id": "son-funny-2",
+      "to": "son",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Yes, you can have cake for dinner. Just this once."
+    },
+    {
+      "id": "son-short-0",
+      "to": "son",
+      "tone": "short",
+      "text": "Happy birthday, {name}! So proud of you. 💙"
+    },
+    {
+      "id": "son-short-1",
+      "to": "son",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Love you to bits."
+    },
+    {
+      "id": "son-short-2",
+      "to": "son",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Have the best day."
+    },
+    {
+      "id": "son-inspirational-0",
+      "to": "son",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Dream big, work hard and never stop being kind."
+    },
+    {
+      "id": "son-inspirational-1",
+      "to": "son",
+      "tone": "inspirational",
+      "text": "{name}, the world is yours. Go make it amazing. Happy birthday!"
+    },
+    {
+      "id": "son-inspirational-2",
+      "to": "son",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Believe in yourself the way I believe in you."
+    },
+    {
+      "id": "grandparent-heartfelt-0",
+      "to": "grandparent",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Your love is the foundation our whole family is built on."
+    },
+    {
+      "id": "grandparent-heartfelt-1",
+      "to": "grandparent",
+      "tone": "heartfelt",
+      "text": "{name}, thank you for the stories, the wisdom and the warmest hugs in the world. Happy birthday!"
+    },
+    {
+      "id": "grandparent-heartfelt-2",
+      "to": "grandparent",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Every memory with you is one I treasure."
+    },
+    {
+      "id": "grandparent-funny-0",
+      "to": "grandparent",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! You're not old, you're a classic."
+    },
+    {
+      "id": "grandparent-funny-1",
+      "to": "grandparent",
+      "tone": "funny",
+      "text": "{name}, you've got more wisdom than the internet and better cookies too. Happy birthday!"
+    },
+    {
+      "id": "grandparent-funny-2",
+      "to": "grandparent",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Let's celebrate your way, with an early dinner and a long nap."
+    },
+    {
+      "id": "grandparent-short-0",
+      "to": "grandparent",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Love you so much. 💐"
+    },
+    {
+      "id": "grandparent-short-1",
+      "to": "grandparent",
+      "tone": "short",
+      "text": "Happy birthday, {name}! You're the best."
+    },
+    {
+      "id": "grandparent-short-2",
+      "to": "grandparent",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Hugs from all of us."
+    },
+    {
+      "id": "grandparent-inspirational-0",
+      "to": "grandparent",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Your life is a beautiful example of love, grace and resilience."
+    },
+    {
+      "id": "grandparent-inspirational-1",
+      "to": "grandparent",
+      "tone": "inspirational",
+      "text": "{name}, you've taught us that age is just a number and joy is a choice. Happy birthday!"
+    },
+    {
+      "id": "grandparent-inspirational-2",
+      "to": "grandparent",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Here's to more years of laughter, stories and love."
+    },
+    {
+      "id": "coworker-heartfelt-0",
+      "to": "coworker",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Working with you makes even Mondays better. Hope your day is fantastic."
+    },
+    {
+      "id": "coworker-heartfelt-1",
+      "to": "coworker",
+      "tone": "heartfelt",
+      "text": "{name}, thanks for being such a great teammate and an even better person. Happy birthday!"
+    },
+    {
+      "id": "coworker-heartfelt-2",
+      "to": "coworker",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Wishing you a year of success, balance and plenty of celebrations."
+    },
+    {
+      "id": "coworker-funny-0",
+      "to": "coworker",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Your gift is me not scheduling a meeting today."
+    },
+    {
+      "id": "coworker-funny-1",
+      "to": "coworker",
+      "tone": "funny",
+      "text": "{name}, may your inbox be empty and your cake be plentiful. Happy birthday!"
+    },
+    {
+      "id": "coworker-funny-2",
+      "to": "coworker",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Let's pretend we're working while we eat cake."
+    },
+    {
+      "id": "coworker-short-0",
+      "to": "coworker",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Enjoy your day. 🎂"
+    },
+    {
+      "id": "coworker-short-1",
+      "to": "coworker",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Cheers from the team."
+    },
+    {
+      "id": "coworker-short-2",
+      "to": "coworker",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Have a great one."
+    },
+    {
+      "id": "coworker-inspirational-0",
+      "to": "coworker",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! May this year bring big wins and bold ideas."
+    },
+    {
+      "id": "coworker-inspirational-1",
+      "to": "coworker",
+      "tone": "inspirational",
+      "text": "{name}, here's to new goals and great achievements. Happy birthday!"
+    },
+    {
+      "id": "coworker-inspirational-2",
+      "to": "coworker",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Keep inspiring us all."
+    },
+    {
+      "id": "boss-heartfelt-0",
+      "to": "boss",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! Thank you for leading with kindness and believing in our team."
+    },
+    {
+      "id": "boss-heartfelt-1",
+      "to": "boss",
+      "tone": "heartfelt",
+      "text": "{name}, your guidance makes a real difference every day. Wishing you a wonderful birthday!"
+    },
+    {
+      "id": "boss-heartfelt-2",
+      "to": "boss",
+      "tone": "heartfelt",
+      "text": "Happy birthday, {name}! We're grateful for your support and leadership."
+    },
+    {
+      "id": "boss-funny-0",
+      "to": "boss",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! Feel free to celebrate by giving us all the afternoon off."
+    },
+    {
+      "id": "boss-funny-1",
+      "to": "boss",
+      "tone": "funny",
+      "text": "{name}, you're the best boss, and no, I'm not just saying that because it's your birthday. Mostly. Happy birthday!"
+    },
+    {
+      "id": "boss-funny-2",
+      "to": "boss",
+      "tone": "funny",
+      "text": "Happy birthday, {name}! We got you a cake. It was approved in the budget."
+    },
+    {
+      "id": "boss-short-0",
+      "to": "boss",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Best wishes from all of us."
+    },
+    {
+      "id": "boss-short-1",
+      "to": "boss",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Enjoy your special day."
+    },
+    {
+      "id": "boss-short-2",
+      "to": "boss",
+      "tone": "short",
+      "text": "Happy birthday, {name}! Cheers to you."
+    },
+    {
+      "id": "boss-inspirational-0",
+      "to": "boss",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Your vision inspires us to aim higher every day."
+    },
+    {
+      "id": "boss-inspirational-1",
+      "to": "boss",
+      "tone": "inspirational",
+      "text": "{name}, may this year bring new heights and great success. Happy birthday!"
+    },
+    {
+      "id": "boss-inspirational-2",
+      "to": "boss",
+      "tone": "inspirational",
+      "text": "Happy birthday, {name}! Thank you for showing us what great leadership looks like."
+    }
+  ]
+}

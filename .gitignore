@@ -15,6 +15,15 @@ build/
 .stylelintcache
 *.tsbuildinfo
 
+# Python (the terminal app in cli/)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
 # Test and coverage reports
 coverage/
 .nyc_output/

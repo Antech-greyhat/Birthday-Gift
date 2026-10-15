@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title</title>
+<style>
+  :root { --ink: $ink; --sub: $sub; --accent: $accent; --panel: $panel; --field: $field; --button-ink: $button_ink; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: $bg; background-attachment: fixed; color: var(--ink);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 560px; margin: 0 auto; padding: 32px 16px 56px; }
+  .eyebrow { margin: 0; color: var(--accent); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: 13px; }
+  h1 { margin: 8px 0 24px; font: 600 clamp(32px, 9vw, 46px)/1.1 Georgia, "Times New Roman", serif; }
+  h2 { margin: 0 0 14px; font: 600 22px/1.2 Georgia, "Times New Roman", serif; }
+  section { background: var(--panel); border-radius: 22px; padding: 20px; margin-top: 16px; backdrop-filter: blur(6px); }
+  dl { margin: 0; }
+  .row { padding: 10px 0; border-bottom: 1px solid color-mix(in srgb, var(--sub) 25%, transparent); }
+  .row:last-child { border-bottom: 0; }
+  dt { color: var(--sub); font-size: 13px; }
+  dd { margin: 2px 0 0; font-weight: 600; overflow-wrap: anywhere; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .btn, button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border: 0;
+                 border-radius: 999px; background: var(--accent); color: var(--button-ink); font: 600 15px/1 system-ui, sans-serif;
+                 text-decoration: none; cursor: pointer; }
+  .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--accent); }
+  .btn:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  label { display: block; margin: 12px 0 6px; font-size: 14px; font-weight: 600; }
+  input, textarea { width: 100%; padding: 12px 14px; border: 1px solid color-mix(in srgb, var(--sub) 35%, transparent);
+                    border-radius: 14px; background: var(--field); color: var(--ink); font: inherit; }
+  textarea { min-height: 96px; resize: vertical; }
+  .choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .choices label { margin: 0; }
+  .choices input { position: absolute; opacity: 0; }
+  .choices span { display: grid; place-items: center; min-height: 48px; border-radius: 14px; background: var(--field);
+                  border: 2px solid transparent; font-weight: 600; text-align: center; cursor: pointer; }
+  .choices input:checked + span { border-color: var(--accent); color: var(--accent); }
+  .choices input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .split { display: grid; grid-template-columns: 110px 1fr; gap: 10px; }
+  .choices > *, .split > * { min-width: 0; }
+  form button { width: 100%; margin-top: 16px; }
+  .notice { margin: 0 0 8px; padding: 12px 16px; border-radius: 14px; background: var(--accent); color: var(--button-ink); font-weight: 600; }
+  footer { margin-top: 28px; text-align: center; color: var(--sub); font-size: 14px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  $notice
+  <p class="eyebrow">$headline</p>
+  <h1>$title</h1>
+
+  <section aria-label="Party details">
+    <dl>$details</dl>
+    <div class="links">$links</div>
+  </section>
+
+  <section id="rsvp">
+    <h2>Will you be there?</h2>
+    <form method="post" action="rsvp">
+      <label for="r-name">Your name</label>
+      <input id="r-name" name="name" maxlength="60" required autocomplete="name">
+      <label id="r-answer">Your answer</label>
+      <div class="choices" role="radiogroup" aria-labelledby="r-answer">
+        <label><input type="radio" name="answer" value="yes" required><span>Coming</span></label>
+        <label><input type="radio" name="answer" value="maybe"><span>Maybe</span></label>
+        <label><input type="radio" name="answer" value="no"><span>Can't make it</span></label>
+      </div>
+      <div class="split">
+        <div>
+          <label for="r-guests">People</label>
+          <input id="r-guests" name="guests" type="number" min="1" max="10" value="1" inputmode="numeric">
+        </div>
+        <div>
+          <label for="r-note">Note for the host</label>
+          <input id="r-note" name="note" maxlength="200" placeholder="Allergies, arriving late…">
+        </div>
+      </div>
+      <button type="submit">Send RSVP</button>
+    </form>
+  </section>
+
+  <section id="wish">
+    <h2>Leave a birthday wish</h2>
+    <form method="post" action="wish">
+      <label for="w-name">From</label>
+      <input id="w-name" name="name" maxlength="60" autocomplete="name">
+      <label for="w-message">Your wish</label>
+      <textarea id="w-message" name="message" maxlength="280" required></textarea>
+      <button type="submit">Add to the wish wall</button>
+    </form>
+  </section>
+
+  <footer><a href="wall">See the wish wall</a> · Served by Birthday Studio Party Mode</footer>
+</main>
+</body>
+</html>
