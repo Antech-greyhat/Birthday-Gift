@@ -169,7 +169,7 @@ The build uses relative paths and hash routing, so `dist/` can be dropped into G
 
 ## Encore · The Terminal App
 
-The same three tools also run in a terminal, written in Python and kept in `cli/`. That folder is never deployed. You get it by cloning the repo and running it on your own computer.
+The same three tools run locally in your terminal. With Git 2.35+, Bash and Python 3.10+ with `venv`, you can fetch just the CLI and launch it in one session.
 
 <p align="center">
   <img src="images/launcher.png" alt="The Birthday Studio terminal launcher with Countdown, Wishes and Invitation Maker" width="720" />
@@ -178,15 +178,16 @@ The same three tools also run in a terminal, written in Python and kept in `cli/
 </p>
 
 ```bash
-git clone https://github.com/Antech-greyhat/Birthday-Gift.git
-cd Birthday-Gift/cli
-pipx install .           # or install into a virtual environment, see below
-bday                     # opens the full screen app
+git clone --depth 1 --filter=blob:none --no-checkout https://github.com/Antech-greyhat/Birthday-Gift.git
+cd Birthday-Gift
+git sparse-checkout set --no-cone '/cli/' '/.gitignore'
+git checkout
+./cli/run.sh
 ```
 
-Python 3.10 or newer is required. On Windows, Windows Terminal draws the QR codes best. Linux distributions such as Kali, Debian and Ubuntu block a plain `pip install .` with an `externally-managed-environment` error. Use pipx (`sudo apt install pipx`), or create a virtual environment first: `python3 -m venv .venv && source .venv/bin/activate && pip install .`
+If you already have the full repository, run `./cli/run.sh` from its root. On first use the launcher creates `cli/.venv` and installs the Python dependencies. Use it anywhere the examples say `bday`, for instance `./cli/run.sh countdown "Ava Rose" 05-14`.
 
-To update to the latest version, run `git pull` in your clone, then reinstall from the `cli` folder with `pipx install --force .` (or `pip install --upgrade .` inside your virtual environment). Your Party Mode replies are kept. The [terminal app README](cli/README.md#update) covers every install type.
+To update, run `git pull --ff-only` and launch again. The [terminal app README](cli/README.md#install) also covers pipx and native Windows installs.
 
 | Type | You get |
 | --- | --- |
