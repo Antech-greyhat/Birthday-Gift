@@ -19,10 +19,10 @@
   countdowns · wishes · invitations · party mode
 ```
 
-This is the command line companion to the [Birthday Studio website](https://birthday-gift-wish.vercel.app/). It is not deployed anywhere. You clone the repository and run it on your own computer.
+This is the command line companion to the [Birthday Studio website](https://birthday-gift-wish.vercel.app/). You can clone just the terminal app and run it on your own computer.
 
 <p align="center">
-  <img src="../images/launcher.png" alt="The Birthday Studio terminal launcher with Countdown, Wishes and Invitation Maker" width="720" />
+  <img src="https://raw.githubusercontent.com/Antech-greyhat/Birthday-Gift/master/images/launcher.png" alt="The Birthday Studio terminal launcher with Countdown, Wishes and Invitation Maker" width="720" />
   <br />
   <sub>The launcher that opens when you run <code>bday</code></sub>
 </p>
@@ -31,30 +31,53 @@ This is the command line companion to the [Birthday Studio website](https://birt
 
 ## Install
 
-The easiest way is [pipx](https://pipx.pypa.io/), which installs the app in its own environment and puts `bday` on your path:
+### Clone just the CLI
+
+These commands use Git 2.35+ to check out `cli/` and the shared `.gitignore`. GitHub sends the file contents for those paths and skips the web app. If you already have the repository, open its `cli` folder and skip to the launcher below.
 
 ```bash
-git clone https://github.com/Antech-greyhat/Birthday-Gift.git
-cd Birthday-Gift/cli
+git clone --depth 1 --filter=blob:none --no-checkout https://github.com/Antech-greyhat/Birthday-Gift.git
+cd Birthday-Gift
+git sparse-checkout set --no-cone '/cli/' '/.gitignore'
+git checkout
+cd cli
+```
+
+### Run with Bash
+
+On Linux, macOS or WSL, use Bash and Python 3.10+ with `venv`. The first run creates `.venv` in the CLI folder and installs the package and its dependencies. Later runs reuse that environment. On Debian or Ubuntu, install `python3-venv` if Python reports that `ensurepip` is unavailable.
+
+```bash
+./run.sh                            # open the full screen app
+./run.sh --help
+./run.sh countdown "Ava Rose" 05-14
+```
+
+Use `./run.sh` for any `bday` command in this guide. From the repository root, use `./cli/run.sh`. Relative output paths such as `--poster wish.png` are relative to your current directory.
+
+### Install the `bday` command
+
+To run `bday` from any directory, use [pipx](https://pipx.pypa.io/) from the `cli` folder.
+
+```bash
 pipx install .
 bday
 ```
 
-Without pipx, use a virtual environment:
+You can also set up a virtual environment yourself. From the `cli` folder on macOS or Linux, run
 
 ```bash
-cd Birthday-Gift/cli
 python3 -m venv .venv
-source .venv/bin/activate       # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 pip install .
 bday
 ```
 
-After a venv install, run `source .venv/bin/activate` in each new terminal before using `bday`, or call `.venv/bin/bday` directly.
+In Windows PowerShell, use `py -m venv .venv`, then `.\.venv\Scripts\Activate.ps1`, `python -m pip install .` and `bday`. For a manual venv install, activate the environment in each new terminal before using `bday`.
 
 | Platform | Notes |
 | --- | --- |
-| Kali, Debian, Ubuntu, Fedora, Arch | Plain `pip install .` stops with `externally-managed-environment`. Use pipx (`sudo apt install pipx && pipx ensurepath`) or the venv steps above |
+| Kali, Debian, Ubuntu, Fedora, Arch | The Bash launcher uses its own environment. Use pipx if you want `bday` on your path |
 | Windows | Use Windows Terminal for crisp QR codes. Allow Python through the firewall when Party Mode asks |
 | macOS, Linux | Any modern terminal works |
 | Old or colourless terminals | Add `--qr-style wide` or `--qr-style ascii` |
@@ -63,7 +86,16 @@ After a venv install, run `source .venv/bin/activate` in each new terminal befor
 
 ## Update
 
-When new changes land on GitHub, pull them into your clone and then reinstall. Pick the steps that match how you installed:
+Pick the steps for your installation.
+
+**Using the Bash launcher**
+
+From the `cli` folder, pull and run again. Git keeps your sparse checkout selection. The launcher picks up source changes and refreshes the install when `pyproject.toml` changes.
+
+```bash
+git pull --ff-only
+./run.sh --version
+```
 
 **Installed with pipx**
 
@@ -91,7 +123,7 @@ git pull
 pip install -e ".[dev]"         # only needed when dependencies changed, harmless otherwise
 ```
 
-Then run `bday --version` to check that the new version is installed.
+For pipx and manual installs, run `bday --version` to check the installed version.
 
 | Situation | What to do |
 | --- | --- |
@@ -132,7 +164,7 @@ Every command has `--help`.
 ### Countdown
 
 <p align="center">
-  <img src="../images/countdown.png" alt="The countdown screen with the live clock, star sign, birthstone and date facts" width="100%" />
+  <img src="https://raw.githubusercontent.com/Antech-greyhat/Birthday-Gift/master/images/countdown.png" alt="The countdown screen with the live clock, star sign, birthstone and date facts" width="100%" />
   <br />
   <sub>The countdown: a form on the left, the live clock and facts on the right</sub>
 </p>
@@ -179,7 +211,7 @@ bday invite --from-link "https://birthday-gift-wish.vercel.app/#/invitation?view
 **Party Mode.** No internet needed, only a shared Wi-Fi network.
 
 <p align="center">
-  <img src="../images/party-mode.png" alt="Party Mode dashboard with the join QR code, RSVP table, wish wall and activity log" width="100%" />
+  <img src="https://raw.githubusercontent.com/Antech-greyhat/Birthday-Gift/master/images/party-mode.png" alt="Party Mode dashboard with the join QR code, RSVP table, wish wall and activity log" width="100%" />
   <br />
   <sub>Party Mode: guests scan to join, and RSVPs and wishes arrive live. The QR code, addresses and file path are blurred here</sub>
 </p>
